@@ -88,7 +88,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-	Security Operations Engineer with extensive experience in support and design of high-availability enterprise applications and infrastructure. Adept at working across complex multi-cloud environments leading efforts to drive modernization, monitoring and detection capability enhancement, compliance, and vulnerability management. I am an expert in UNIX-based applications and infrastructure and I am looking to leverage my extensive knowledge within a proactive organization. 
+	Security Operations Engineer with extensive experience in support and design of high-availability enterprise applications and infrastructure. Adept at working across complex multi-cloud environments leading efforts to drive modernization, monitoring and detection capability enhancement, compliance, and vulnerability management. I am subject matter expert in Linux + UNIX applications and infrastructure, I seek to leverage my extensive knowledge and experience within a proactive organization. 
       </>
     ),
   },
@@ -102,40 +102,32 @@ const about = {
         role: "Security Operations Engineer",
         achievements: [
           <>
-            Lead infrastructure modernization initiative for upgrading of end-of-life cyberdefense assets running
-            unsupported versions of the RedHat Enterprise Linux operating system.
+            Led modernization of cyber defense infrastructure by upgrading legacy systems from unsupported RHEL versions, enhancing system security and compliance.
           </>,
           <>
-            Identified and lead initiative to address monitoring gaps and improve visibility into high-dollar database
-            assets monitored by Imperva Secure Sphere.
+	    Maintained and upgraded critical cyber defense platforms—including RSA NetWitness, Imperva SecureSphere, Cofense Triage, Proofpoint, and Splunk ensuring operational readiness and threat visibility.
           </>,
           <>
-            Follow change management policies testing all work on lower environments, create test and validation plans, request CMB approval,
-            upon approval proceed with production changes.
+	    Migrated cyber defense certificates to AppViewX, automating renewal processes and reducing the risk of service disruption due to certificate expiration.
           </>,
           <>
-            Maintain and upgrade cyber defense tooling such as RSA NetWitness, Imperva SecureSphere, Cofense Triage, Proofpoint, Splunk,
-            and Snappass.
+	    Performed gap analysis on Imperva SecureSphere deployment; led remediation efforts to restore full visibility and monitoring of critical database assets for BCBSA.
           </>,
           <>
-            Enroll all internally signed certificates into AppViewX to automate future certificate renewals.
+	    Adhered to strict change management protocols by submitting detailed production changes, including testing and validation plans, for board approval prior to deployment.
           </>,
           <>
-            Create and update documentation of cyberdefense tooling for members to easily understand topology
-            and configuration of existing toolsets.
+	    Redesigned the UI of a Flask-based Python application for secure credential sharing, improving usability and user experience.
           </>,
           <>
-             Lead containerization and migration of BCBSA’s secure credential sharing tool to Amazon Web Services.
-          </>,
-          <>
-             Containerize Flask, Redis, and Nginx under Docker Compose, create Cloud Formation scripts for EC2 deployment.
+            Containerized Flask, Redis, and Nginx using Docker Compose and authored AWS CloudFormation templates to automate EC2-based deployment workflows.
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
             src: "/images/employment/bluecrossblueshield.jpeg",
-            alt: "Once UI Project",
+            alt: "Blue Cross Blue Shield",
             width: 16,
             height: 9,
           },
@@ -147,25 +139,25 @@ const about = {
         role: "Security Engineer II",
         achievements: [
           <>
-            Investigate alerts from end-points and servers within Office 365, Azure, and AWS environments.
+	    Migrated 10+ years of team knowledge assets—including training videos and ticket reviews—from Confluence to SharePoint, increasing content discoverability and ensuring continuity of institutional knowledge.
           </>,
           <>
-            Leverage security tooling such Demisto (Cortex XSOAR), CrowdStrike, FireEye, Wiz.io, Axonius, ExtraHop, GuardDuty, and Defender.
+	    Developed custom automation and scripting tools in response to team requests, significantly reducing manual workloads and improving process accuracy.
           </>,
           <>
-            Improve opeational efficiency, create custom security automations requested by members of the Cybersecurity Incident Response Team.
+	    Investigated security alerts across Office 365, Azure, and AWS environments for three distinct business entities, identifying threats and leading remediation efforts.
           </>,
           <>
-            Review logs of compromised Linux assets to establish event timeline, point-of-entry, method of entry, source of the attack, and identify what actions were performed by the attacker throughout the timeline.
+	    Utilized a broad suite of security tools—including Cortex XSOAR, CrowdStrike, FireEye, Wiz.io, Axonius, ExtraHop, GuardDuty, and Microsoft Defender—to monitor, analyze, and respond to threats across hybrid cloud environments.
           </>,
           <>
-            Triage detection hosts to determine cause and presented risks.
+	    Performed forensic log analysis on compromised Linux assets to reconstruct attack timelines, identify initial access vectors, determine attacker actions, and assess impact.
           </>,
           <>
-            Vulnerability management leveraging RiskSense, Qualsys, and Nessus tooling.
+	    Managed vulnerability lifecycle using RiskSense, Qualys, and Nessus to prioritize and remediate risks across enterprise assets.
           </>,
           <>
-            Intercept suspicious O365 sign-in attempts from unusual hosts and user locations. Remediate compromised accounts
+	    Monitored and responded to anomalous Office 365 sign-in activity from atypical hosts and geolocations; performed account compromise investigations and executed timely remediation.
           </>,
         ],
         images: [
@@ -196,22 +188,22 @@ const about = {
         role: "Security Engineer",
         achievements: [
           <>
-             Provide insight on project’s infrastructure requirements, technologies, middleware, configuration, and compliance.
+	    Provided technical guidance on infrastructure design, technology selection, and service configuration to align with project goals and compliance standards.
           </>,
           <>
-            Document processes of implementation for easy replication of efforts in future projects.
+	    Authored detailed service implementation documentation to ensure repeatability and knowledge transfer for future projects.
           </>,
           <>
-            Aided initial efforts establishing build automation services for CI/CD pipeline. (Urban Code Deploy/Jenkins)
+	    Contributed to the initial setup of CI/CD pipeline automation using UrbanCode Deploy and Jenkins, enhancing development velocity and deployment consistency.
           </>,
           <>
-            Lead implementation efforts for SiteMinder, Apache, Tomcat, MongoDB, and MongoBI Connector.
+	    Led deployment of SiteMinder, Apache, Tomcat, MongoDB, and MongoDB BI Connector across development, staging, and production environments.
           </>,
           <>
-            Replicate service implementations across multiple staged environments.
+	    Enforced compliance by implementing Tripwire for continuous file integrity monitoring of critical project assets.
           </>,
           <>
-            Coordinate provisioning of infrastructure to specification of project's needs.
+	    Coordinated infrastructure provisioning tailored to project-specific requirements, ensuring timely and scalable resource availability.
           </>,
         ],
         images: [
@@ -292,14 +284,13 @@ const about = {
     ],
   },
 
-// Stopped Here
   studies: {
     display: true, // set to false to hide this section
     title: "Education",
     institutions: [
       {
         name: "Freeport High School",
-        description: <>General Studies.</>,
+        description: <>Class of 2004 from FHS in Freeport, IL</>,
       },
     ],
   },
