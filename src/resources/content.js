@@ -98,7 +98,7 @@ const about = {
     experiences: [
       {
         company: "BCBSA (Contract)",
-        timeframe: "2024-2025",
+        timeframe: "03/2024 - 04/2025",
         role: "Security Operations Engineer",
         achievements: [
           <>
@@ -135,7 +135,7 @@ const about = {
       },
       {
         company: "CenturyLink",
-        timeframe: "2019-2024",
+        timeframe: "12/2019 - 11/2023",
         role: "Security Engineer II",
         achievements: [
           <>
@@ -184,7 +184,7 @@ const about = {
       },
   {
         company: "Wells Fargo (Contract)",
-        timeframe: "2019-2019",
+        timeframe: "03/2019 - 09/2019",
         role: "Security Engineer",
         achievements: [
           <>
@@ -218,27 +218,30 @@ const about = {
       },
       {
         company: "University of Phoenix",
-        timeframe: "2014-2018",
+        timeframe: "01/2014 - 10/2018",
         role: "Linux Systems Administrator",
         achievements: [
           <>
-            Support high-availability production servers and applications.
+	    Provided operational support for high-availability production servers and applications in an Agile environment, ensuring consistent uptime and performance for students and educators.
           </>,
           <>
-            Coordinate bridge calls for outage related events engaging required teams and providing consistent updates to stakeholders and management.
+	    Led bridge calls during outage events, coordinating cross-functional teams and delivering timely updates to stakeholders and executive leadership.
           </>,
           <>
-            Investigate alerts indicating potential issues with system health, performance, or service availability in development, testing, and production environments.
+	    Monitored and investigated system alerts across dev, test, and prod environments to proactively identify and resolve issues related to performance, health, and availability.
           </>,
           <>
-            Execute Linux specific change tasks in accordance with change management policies and during the scheduled window of time for change.
+	    Performed Linux-specific change tasks in alignment with change management policies, executing during authorized maintenance windows to minimize disruption.
           </>,
           <>
-            Create and document standard operating procedures for alerts and processes without a corresponding KB article following  KCS methodologies.
+	    Authored SOPs for undocumented alerts and processes using Knowledge-Centered Service (KCS) practices to promote knowledge reuse and reduce resolution times.
           </>,
           <>
-            Coordinate with datacenter operations teams during  stand-up or decommissioning of hosts, replacement of failed components, or checking hosts inaccessible through their remote management interface. (ILO, ALOM, DRAC, UCS).
+	    Collaborated with datacenter operations to provision and decommission hosts, replace failed hardware components, and troubleshoot remote access issues via ILO, ALOM, DRAC, and UCS interfaces.
           </>,
+	 <>
+	    Administered VMware environments across development, testing, and production, managing vCenter clusters and vSphere-hosted virtual machines.
+	</>,
         ],
          images: [                                                                    
            // optional: leave the array empty if you don't want to display images
@@ -252,24 +255,30 @@ const about = {
       },
       {
         company: "Brinkster",
-        timeframe: "2011-2014",
+        timeframe: "07/2012 - 01/2014",
         role: "Help Desk Lead",
         achievements: [
           <>
-            Customer support by chat, ticket, and phone for shared, cloud, and dedicated hosting services.
+	    Provided multi-channel technical support (chat, ticket, phone) for shared, cloud, and dedicated hosting environments, ensuring prompt issue resolution and high customer satisfaction.
           </>,
           <>
-            Perform backup and restore operations of customer databases for MySQL and Microsoft SQL Server.
+	    Troubleshot application-level issues for customer-hosted CMS platforms including WordPress, Joomla, and Drupal, ensuring minimal downtime and optimized performance.
           </>,
           <>
-            DNS management services for customers using Brinkster DNS services.
+	    Support deployment and maintenance of VMware infrastructure during initial launch of Brinkster Communication’s cloud server offerings.
           </>,
           <>
-            Administration of Windows and Linux web servers (IIS/Apache), VMware virtual machines, MySQL, Microsoft SQL Server, and Zimbra mail environment.
+	    Executed backup and restore operations for customer databases including MySQL and Microsoft SQL Server, ensuring data integrity and recovery readiness.
           </>,
           <>
-            Maintain reputation of shared mail environment, identify and address abuse occurring within Zimbra email environment.
+	    Managed DNS configurations and troubleshooting for customers leveraging Brinkster DNS services.
           </>,
+	  <>
+	    Administered hybrid Windows/Linux web servers (IIS/Apache), virtual infrastructure (VMware), and core services including MySQL, Microsoft SQL Server, and Zimbra mail systems.
+	 </>, 
+	 <>
+	    Maintained shared email environment health by monitoring Zimbra mail systems, identifying abusive activity, and enforcing corrective measures to preserve domain reputation.
+	</>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
