@@ -14,7 +14,7 @@ const person = {
 };
 
 const newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
@@ -37,11 +37,6 @@ const social = [
     link: "https://www.linkedin.com/in/insecurity",
   },
   {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-  },
-  {
     name: "Email",
     icon: "email",
     link: `mailto:${person.email}`,
@@ -57,7 +52,7 @@ const home = {
   headline: <>Joshua Marcum</>,
   featured: {
     display: true,
-    title: <><strong className="ml-4">Schedule Call</strong>: Open to work!</>,
+    title: <><strong className="ml-4">Schedule Call</strong></>,
     href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
@@ -70,7 +65,7 @@ const home = {
 const about = {
   path: "/about",
   label: "View Resume",
-  title: `Employment – ${person.name}`,
+  title: `View Resume`,
   description: `Meet ${person.name}, ${person.role} from ${person.location}`,
   tableOfContent: {
     display: true,
