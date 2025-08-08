@@ -311,6 +311,14 @@ const about = {
         title: "Cortex XSOAR",
         description: <>4 Years Experience - Incident response and investigation.</>,
         // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/skills/xsoar.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
 
       {
@@ -319,13 +327,7 @@ const about = {
         // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
+            src: "/images/skills/crowdstrike.jpg",
             alt: "Project image",
             width: 16,
             height: 9,
@@ -336,6 +338,14 @@ const about = {
         title: "Splunk",
         description: <>8 Years Experience - Splunk Administration and utilization..</>,
         // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/skills/splunk.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
     ],
   },
