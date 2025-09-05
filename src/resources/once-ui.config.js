@@ -1,7 +1,7 @@
 import { home } from "./content";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL = "https://securityengineerd.com";
+const baseURL = "https://securityengineerd.com/";
 
 const routes = {
   "/": true,
@@ -20,32 +20,32 @@ const display = {
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
+ // "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
 };
 
 // Import and set font for each variant
-import { Geist } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
+import { Alumni_Sans } from "next/font/google";
+import { Genos } from "next/font/google";
 
-const heading = Geist({
+const heading = Alumni_Sans({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
 });
 
-const body = Geist({
+const body = Alumni_Sans({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
 });
 
-const label = Geist({
+const label = Alumni_Sans({
   variable: "--font-label",
   subsets: ["latin"],
   display: "swap",
 });
 
-const code = Geist_Mono({
+const code = Genos({
   variable: "--font-code",
   subsets: ["latin"],
   display: "swap",
@@ -60,11 +60,11 @@ const fonts = {
 
 // default customization applied to the HTML in the main layout.tsx
 const style = {
-  theme: "system", // dark | light | system
-  neutral: "slate", // sand | gray | slate | custom
-  brand: "indigo", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  accent: "indigo", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  solid: "contrast", // color | contrast
+  theme: "dark", // dark | light | system
+  neutral: "gray", // sand | gray | slate | custom
+  brand: "blue", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  accent: "blue", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  solid: "color", // color | contrast
   solidStyle: "plastic", // flat | plastic
   border: "playful", // rounded | playful | conservative
   surface: "translucent", // filled | translucent
@@ -88,7 +88,7 @@ const dataStyle = {
 
 const effects = {
   mask: {
-    cursor: false,
+    cursor: true,
     x: 50,
     y: 0,
     radius: 100,
@@ -106,7 +106,7 @@ const effects = {
   },
   dots: {
     display: false,
-    opacity: 40,
+    opacity: 100,
     size: "2",
     color: "brand-background-strong",
   },
@@ -119,10 +119,10 @@ const effects = {
   },
   lines: {
     display: true,
-    opacity: 100,
+    opacity: 70,
     color: "neutral-alpha-weak",
-    size: "16",
-    thickness: 1,
+    size: "64",
+    thickness: 2,
     angle: 45,
   },
 };

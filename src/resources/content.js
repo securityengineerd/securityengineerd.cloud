@@ -48,16 +48,16 @@ const home = {
   image: "/images/og/home.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio, resume, and personal blog of ${person.role}`,
+  description: `Portfolio, resume, and blog of ${person.role}`,
   headline: <>Joshua Marcum</>,
   featured: {
     display: true,
-    title: <><strong className="ml-4">Schedule Call</strong></>,
-    href: "/work/building-once-ui-a-customizable-design-system",
+    title: <><strong className="ml-4">Schedule Meeting</strong></>,
+    href: "https://cal.com/securityengineerd",
   },
   subline: (
     <>
-      Greetings! My name is Joshua Marcum and my life passion has and always will be computers. I am actively searching for an exciting new opportunity that will utilize my extensive knowledge of enterprise server technologies and cyber-defense. For more information, check the resume portion of this page. 
+      Greetings! My name is Joshua Marcum, my life passion is and always will be computers. I am currently between roles and I am actively searching for a challenging new career opportunity that will put my extensive knowledge of enterprise server technologies and cyber-defense to good use.
     </>
   ),
 };
@@ -69,7 +69,7 @@ const about = {
   description: `Meet ${person.name}, ${person.role} from ${person.location}`,
   tableOfContent: {
     display: true,
-    subItems: false,
+    subItems: true,
   },
   avatar: {
     display: true,
@@ -80,7 +80,7 @@ const about = {
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Summary",
     description: (
       <>
 	Security Operations Engineer with extensive experience in support and design of high-availability enterprise applications and infrastructure. Adept at working across complex multi-cloud environments leading efforts to drive modernization, monitoring and detection capability enhancement, compliance, and vulnerability management. I am subject matter expert in Linux + UNIX applications and infrastructure, I seek to leverage my extensive knowledge and experience within a proactive organization. 
@@ -289,7 +289,7 @@ const about = {
   },
 
   studies: {
-    display: true, // set to false to hide this section
+    display: false, // set to false to hide this section
     title: "Education",
     institutions: [
       {
@@ -309,7 +309,7 @@ const about = {
         images: [
           {
             src: "/images/skills/xsoar.jpg",
-            alt: "Project image",
+            alt: "Cortex XSOAR",
             width: 16,
             height: 9,
           },
@@ -323,7 +323,7 @@ const about = {
         images: [
           {
             src: "/images/skills/crowdstrike.jpg",
-            alt: "Project image",
+            alt: "Crowdstrike",
             width: 16,
             height: 9,
           },
@@ -336,7 +336,7 @@ const about = {
         images: [
           {
             src: "/images/skills/splunk.jpg",
-            alt: "Project image",
+            alt: "Enterprise Splunk",
             width: 16,
             height: 9,
           },
