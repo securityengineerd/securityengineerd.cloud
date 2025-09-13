@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+systemctl stop onceui-prod && \
+chown -Rv nextjs:nextjs /home/nextjs/* && \
+sudo -u nextjs "cd securityengineerd.cloud && npm run build" && \
+systemctl start onceui-prod 
+
+systemctl status onceui-prod
+
+

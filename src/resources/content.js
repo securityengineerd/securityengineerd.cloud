@@ -57,7 +57,7 @@ const home = {
   },
   subline: (
     <>
-      Welcome! My name is Joshua Marcum, my passion has and always will be computers. I am an expert in design and implementation of high-availability systems + applications and cyber-defense. I am accepting new work opportunities, if interested click Schedule a Call.
+      Welcome! My name is Joshua Marcum, I am a Security Operations Engineer. My passion has and always will be computers, resulting in a fruitful career in cyber-defense at a few well-known organizations. I am fortunate as I have learned and worked with some truely exceptional people. I am accepting new work opportunities, please reach out with any potential leads on employment using the Schedule Call link.
     </>
   ),
 };

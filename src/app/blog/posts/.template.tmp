@@ -1,0 +1,16 @@
+---
+title: "Self-hosted Security Guide"
+publishedAt: "2024-09-12"
+image: "/images/gallery/img-02.jpg"
+summary: "Learn how to self-host applications securely, and easily..."
+tag: "Self-Hosted"
+---
+
+If your self-hosted strategy includes any of the following...
+
+- Open ports on your server for the services you run
+- SSL Encryption using LetsEncrypt
+- DNS records pointing directly to your server's IPv4/IPv6 address
+
+Your self-hosting strategy is wrong! Not only is it wrong, your host might as well
+have a target painted on it. 1
