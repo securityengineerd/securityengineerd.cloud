@@ -7,16 +7,16 @@ const withMDX = mdx({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // images: {
-  //     remotePatterns: [
-  //       {
-  //         protocol: 'https',
-  //         hostname: 'skillicons.dev', // Replace with the hostname of your remote image source
-  //         port: '', // Leave empty if no specific port is used
-  //         pathname: '/**', // Adjust the path as needed, using wildcards for flexibility
-  //       },
-  //     ],
-  // },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'skillicons.dev',
+      },
+    ],
+    // Allow SVGs (note: they won't be optimized, just proxied)
+    dangerouslyAllowSVG: true,
+  },
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
   sassOptions: {
