@@ -57,8 +57,7 @@ const home = {
   },
   subline: (
     <>
-      My passion in life has always been computers, specifially the web and server technologies powering our modern internet. Knowledge I have gained from these interests and my work in cyber-defense has contributed to the safety and security of several well-known organizations and their clients. I bring expert knowledge and experience in leading complex initiatives within enterprise environments to drive modernization, automation, and compliance. I look forward to helping with your organization's operational challenges, whether it be large-scale cloud and data migrations, systems design and implementation, optimizing expeditures, or vulnerability management. 
-      I am open to work, click "Schedule a call."
+’ve always been passionate about computers, especially the web and server technologies that power our modern internet. My background in cyber defense has helped secure several well-known organizations and their clients. I bring expertise in leading enterprise initiatives that drive modernization, automation, and compliance. Whether it’s cloud and data migrations, systems design, cost optimization, or vulnerability management, I look forward to helping solve your organization’s challenges. I’m open to work, click “Schedule a call.”
 
     </>
   ),
