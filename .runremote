@@ -1,9 +1,34 @@
 #!/usr/bin/env bash
 
-systemctl stop onceui-prod && \
-chown -Rv nextjs:nextjs /home/nextjs/* && \
-sudo -u nextjs "cd securityengineerd.cloud && npm run build" && \
-systemctl start onceui-prod 
+L_PATH=$HOME/Projects/securityengineerd.cloud
+R_PATH=/home/nextjs/securityengineerd.cloud
+R_HOST=ssh.artisangift.co
+R_USER=root
+
+function writemsg {
+  local INPUT_MESG=$1
+  printf '%s\n' "${INPUT_MESG}"
+}
+
+writemsg "Sending latest portfolio source to server..."
+sleep 3 && rsync -avzP $L_PATH/* $R_USER@$R_HOST:$R_PATH &&
+    writemsg " - success" || { writemsg " - Process aborted, failed to transfer portfolio."; exit 1; }
+
+writemsg "Stopping Portfolio Service..."
+sleep 3 && systemctl stop onceui-prod && \
+    writemsg " - success" || { writemsg " - Process aborted, failed to stop service"; exit 1; }
+
+writemsg "Applying correct ownership and permissions to portfolio data..." 
+sleep 5 && chown -Rv nextjs:nextjs /home/nextjs/* &&
+    writemsg " - success" || { writemsg " - Process aborted, failed to apply ownership and permissions"; exit 1; }
+
+writemsg "Building production-ready portfolio..."
+sleep 3 && sudo -u nextjs "$( cd $HOME/securityengineerd.cloud; npm run build > $HOME/build.log )" && \
+    writemsg " - success" || { writemsg " - Process aborted, failed to build portfolio"; exit 1; }
+
+writemsg "Starting updated Portfolio, one moment..."
+systemctl start onceui-prod && \
+    writemsg " - success" || { writemsg " - Process aborted, failed to start portfolio service"; exit 1; }
 
 systemctl status onceui-prod
 

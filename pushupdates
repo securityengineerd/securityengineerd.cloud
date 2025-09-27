@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
+
 L_PATH=$HOME/Projects/securityengineerd.cloud
 R_PATH=/home/nextjs/securityengineerd.cloud
 R_HOST=ssh.artisangift.co
 R_USER=root
 
-rsync -avzP $L_PATH/* $R_USER@$R_HOST:$R_PATH/
 
-ssh $R_USER@$R_HOST 'bash -s' < .runremote
+
+printf '%s\n' "Executing remote actions script."
+
+ssh root@ssh.artisangift.co 'bash -s' < .runremote
