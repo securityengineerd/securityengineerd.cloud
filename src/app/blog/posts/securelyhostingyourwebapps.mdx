@@ -15,7 +15,7 @@ This guide shows you how to securely expose your web application using **Cloudfl
 - Domain Name (one you own)  
 - Cloudflare account (free)  
 - Web application running on your server (bound to `localhost`, e.g., `http://localhost:8080`). 
-> Warning: Make it is not bound to http://0.0.0.0:8080! That will expose it to all addresses including your server's public address on port 8080. Ensure it only runs on http://localhost:8080 or http://127.0.0.1:8080!  
+> Warning: Make absolutely sure that the instance is NOT configured to listen on http://0.0.0.0:8080! Using '0.0.0.0' listens on all addresses, therefore making it accessible by your server's public IP on port 8080. We do not want that! Our configuration has ZERO port exposure, therefore our "required" listening addrss is 127.0.0.1. 
 - SSH access to your server (for tunnel connector install and port-forwarding to remote application)  
 
 ---
