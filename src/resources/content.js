@@ -52,12 +52,14 @@ const home = {
   headline: <>Joshua Marcum</>,
   featured: {
     display: true,
-    title: <><strong className="ml-4">Schedule Call</strong></>,
+    title: <><strong className="ml-4">Schedule a call</strong></>,
     href: "https://cal.com/securityengineerd",
   },
   subline: (
     <>
-      Welcome! My name is Joshua Marcum, I am a Security Operations Engineer. My passion has and always will be computers, resulting in a fruitful career in cyber-defense at a few well-known organizations. I am fortunate as I have learned and worked with some truely exceptional people. I am accepting new work opportunities, please reach out with any potential leads on employment using the Schedule Call link.
+      My passion in life has always been computers, specifially the web and server technologies powering our modern internet. Knowledge I have gained from these interests and my work in cyber-defense has contributed to the safety and security of several well-known organizations and their clients. I bring expert knowledge and experience in leading complex initiatives within enterprise environments to drive modernization, automation, and compliance. I look forward to helping with your organization's operational challenges, whether it be large-scale cloud and data migrations, systems design and implementation, optimizing expeditures, or vulnerability management. 
+      I am open to work, click "Schedule a call."
+
     </>
   ),
 };

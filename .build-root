@@ -9,6 +9,6 @@ echo "Stopping Portfolio Service..."
 sleep 3 && systemctl stop onceui-prod && \
     echo " - success" || { echo " - Process aborted, failed to stop service"; exit 1; }
 
-echo "Applying correct ownership and permissions to portfolio data..." 
+echo "Setting portfolio permissions..." 
 sleep 5 && chown -Rv nextjs:nextjs /home/nextjs/* &&
     echo " - success" || { echo " - Process aborted, failed to apply ownership and permissions"; exit 1; }
