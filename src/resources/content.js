@@ -57,7 +57,7 @@ const home = {
   },
   subline: (
     <>
-’ve always been passionate about computers, especially the web and server technologies that power our modern internet. My background in cyber defense has helped secure several well-known organizations and their clients. I bring expertise in leading enterprise initiatives that drive modernization, automation, and compliance. Whether it’s cloud and data migrations, systems design, cost optimization, or vulnerability management, I look forward to helping solve your organization’s challenges. I’m open to work, click “Schedule a call.”
+I’ve always been passionate about computers and internet technology. My background in cyber defense has helped secure several well-known organizations and their clients. I bring expertise in leading enterprise initiatives driving modernization, automation, and compliance. Whether it’s a cloud or data migration project, systems design, cost optimization, or vulnerability management, I look forward to tackeling your organization’s challenges. I’m open to work, click “Schedule a call.”
 
     </>
   ),
