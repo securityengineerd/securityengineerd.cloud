@@ -7,16 +7,16 @@ const withMDX = mdx({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // images: {
-  //   remotePatterns: [
-  //     {
-  //       protocol: 'https',
-  //       hostname: 'skillicons.dev',
-  //     },
-  //   ],
-  //   // Allow SVGs (note: they won't be optimized, just proxied)
-  //   dangerouslyAllowSVG: true,
-  // },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'securityengineerd.com',
+      },
+    ],
+    // Allow SVGs (note: they won't be optimized, just proxied)
+    dangerouslyAllowSVG: false,
+  },
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
   sassOptions: {

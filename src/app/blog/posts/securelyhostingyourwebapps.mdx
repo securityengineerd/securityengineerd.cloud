@@ -1,5 +1,5 @@
 ---
-title: "Secure Website Deployment with Cloudflare Tunnels (Step-by-Step)"
+title: "Secure Hosting Guide (Step-by-Step)"
 summary: "Learn my preferred method of securely hosting web applications, it is how this security engineer hosts their websites."
 publishedAt: "2025-09-17"
 tag: "Cloudflare"
@@ -7,16 +7,17 @@ tag: "Cloudflare"
 
 # Overview 
 
-This guide shows you how to securely expose your web application using **Cloudflare Tunnels**. The benefits of this configuration is you are hosting without a reverse proxy service, without LetsEncrypt, and without directly exposing a single IP address or port to the internet. It also eliminates the need of maintaining a config for each upsteam application and PKI for each application. Consider this method to be a security engineer's preferred hosting method. 
+This guide shows you how to securely host web application with ZERO port-exposure, thanks to **Cloudflare** for their **Tunnel Connector**. Using this configuration requires minimal up-keep without the need for a reverse-proxy service, buying a SSL certificate, or worse yet Lets Encrypt. Cloudflare also lets you proxy DNS requests as well, eliminating direct exposure of your server's IP addresses. With over 20+ years experience in web hosting and 12+ yrs in hosting high-availability enterprise applications, it is how this Security Engineer hosts webapps. :)  
+
 
 ---
 
 ## Prerequisites
-- Domain Name (one you own)  
-- Cloudflare account (free)  
-- Web application running on your server (bound to `localhost`, e.g., `http://localhost:8080`). 
-> Warning: Make absolutely sure that the instance is NOT configured to listen on http://0.0.0.0:8080! Using '0.0.0.0' listens on all addresses, therefore making it accessible by your server's public IP on port 8080. We do not want that! Our configuration has ZERO port exposure, therefore our "required" listening addrss is 127.0.0.1. 
-- SSH access to your server (for tunnel connector install and port-forwarding to remote application)  
+- Domain Name
+- Cloudflare User Account (free account)  
+- Existing web application (bound to `localhost:port`, example `http://127.0.0.1:8080`)
+> Warning: Make absolutely sure that the instance is NOT configured to use "0.0.0.0" as the listening address! Using '0.0.0.0' causes the instance to accept connections from any address, including your host's internet-facing addresses. Definitely NOT what we want. Our configuration will have ZERO public port-exposure, the only acceptable listening address is "127.0.0.1".
+- Server shell access. (For tunnel connector install, optional port-forwarding to local workstation to access remote application)  
 
 ---
 
@@ -44,10 +45,12 @@ I have never been charged a single penny, don't let the card prompt freak you ou
 3. Enter a name for your tunnel (e.g., `linode-lax-dev01`). 
   - If you have multiple hosting providers, locations, and servers the above naming convension helps to identify all of the above. 
 4. Select your server’s operating system.  
-5. Run the two provided commands:  
+5. Run the two provided commands on your server:  
 
    - **First command**: installs Cloudflared and links it to your Cloudflare account.  
    - **Second command**: enables the tunnel to start at boot.  
+
+![Run Commands](https://securityengineerd.com/images/posts/cftunnel-install.jpg)
 
 ---
 
