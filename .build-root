@@ -10,5 +10,5 @@ sleep 3 && systemctl stop onceui-prod && \
     echo " - success" || { echo " - Process aborted, failed to stop service"; exit 1; }
 
 echo "Setting portfolio permissions..." 
-sleep 5 && chown -Rv nextjs:nextjs /home/nextjs/* &&
-    echo " - success" || { echo " - Process aborted, failed to apply ownership and permissions"; exit 1; }
+sleep 5 && echo " - the following ownership changes have been made:" && chown -Rv nextjs:nextjs /home/nextjs/* | \
+	egrep -v "retained as" && echo " - success" || { echo " - Process aborted, failed to apply ownership and permissions"; exit 1; }

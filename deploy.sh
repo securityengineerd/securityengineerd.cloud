@@ -11,7 +11,7 @@ function writemsg {
 }
 
 writemsg "Pushing changes to GitHub..."
-$( git add . && git commit -m "Automated file synchronization..." && git push; ) && \
+git add . && git commit -m "automated portfolio push of current sources." && git push && \
 	writemsg "  - success" || writemsg "  - failed to push changes to repository"
 
 writemsg "Pushing changes to server..."
