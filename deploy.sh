@@ -10,16 +10,16 @@ function writemsg {
   printf '%s\n' "${INPUT_MESG}"
 }
 
-writemsg "Pushing changes to GitHub..."
+writemsg "Updating remote repository, pushing current source-code..."
 git add . && git commit -m "automated portfolio push of current sources." && git push && \
 	writemsg "  - success" || writemsg "  - failed to push changes to repository"
 
-writemsg "Pushing changes to server..."
+writemsg "Updating remote hosts portfolio sources..."
 sleep 3 
 
-printf '%s\n' "Uploading portfolio data to server."
+printf '%s\n' "Starting file synchronization."
 sleep 3
-rsync -avzP ./* root@ssh.artisangift.co:/home/nextjs/securityengineerd.cloud/ && \
+rsync -vzP ./* root@ssh.artisangift.co:/home/nextjs/securityengineerd.cloud/ && \
     writemsg " - success" || { writemsg " - Process aborted, failed to transfer portfolio."; exit 1; }
 
 ssh root@ssh.artisangift.co 'bash -s' < .build-root
