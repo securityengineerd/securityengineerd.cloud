@@ -1,13 +1,14 @@
 ---
-title: "Secure Web Application Hosting with -ZERO- Port Exposure (Step-by-Step)"
-summary: "Secure Web Application Hosting Guide - My years of experience in cyber-defense and enterprise application support has defined my standard for running web applications."
+title: "Secure Web Application Hosting with ZERO Port Exposure (Step-by-Step)"
+summary: "Secure Web Application Hosting Guide - My years of experience in enterprise security and hosted applications, it has defined my standard for how to host web applications."
 publishedAt: "2025-09-17"
 tag: "Cloudflare"
---
+---
 
-# Overview 
+# Overview
 
 Today you will learn how to securely host web applications. The following configuration features **minimal configuration**, absolutely **ZERO port-exposure**, **proxied DNS records**, and **free SSL encryption**. Benefits made possible to the Zero-Trust offerings of **Cloudflare** and their **tunnel connector**. 
+
 
 With nearly 20 years of hosting experience, it's the best method I've found to date. We will only be covering a small portion of Cloudflare's services today, specifically their **Tunnel Connector**. Yet there are other awesome features which I will post about soon. Stay tuned...
 
@@ -18,12 +19,18 @@ With nearly 20 years of hosting experience, it's the best method I've found to d
 - Registered Domain Name
 - Cloudflare Account (free account)  
 - Web Application (bound to `localhost:port`, example `http://127.0.0.1:8080`)
+> Note: What application you run doesn't matter, it could be WordPress, Joomla, Drupal, Express, Flask, Django, Spring, Phoenix, .NET, React, Angular, Vue, Apollo, or even if its running Dockerized. The important part that does matter is below.
+
 > Warning: Make absolutely sure the instance is NOT configured using "0.0.0.0" as the listening address! It allows the instance to accept connections from ANY address across all interfaces, including internet-facing addresses. Our hosted application will have ZERO public port-exposure, the only acceptable listening address is "127.0.0.1".
-- Server ssh access (tunnel connector install, optional port-forwarding to local workstation to access remote application)  
+- Server Access
+> We need access to the server whether it be physical, VMware console, shell, KVM, RDP, Webmin, or proxy via trained typing-gerbil. We just need **something** to install our tunnel connector.
 
 ---
 
-## Step 1: Create a Free Cloudflare Account
+## Step 1: Cloudflare Account Creation
+
+What I am about to say might be obvious, skip this section if you already have one. Instead, login. :)
+
 1. Go to [https://www.cloudflare.com](https://www.cloudflare.com).  
 2. Click **Start for Free**.  
 3. Complete the signup (requires a card, but the free plan is 100% free). 
@@ -33,74 +40,76 @@ I have never been charged a single penny, don't let the card prompt freak you ou
 ---
 
 ## Step 2: DNS Configuration
+
 1. In the Cloudflare dashboard, select **"Add a Site"**.  
 2. Select **Manually Enter DNS Records**.  
 3. Set your registrar’s nameservers to the Cloudflare provided values.  
 
-> DNS "usually" updates fairly quickly, in rare occurences it may take up-to 24 hours. You can check propagation by location using whatsmydns.net. It will query your search against location-specific DNS servers and display it's current value.   
+> Normally, updates to records and nameservers quickly propagate. In rare occurences, changes could potentially take up-to forty-eight hours (TTL depending). You can check propagation using **whatsmydns.net** to query records against location-specific servers.
 
 ---
 
-## Step 3: Install and Configure Cloudflare Tunnel Connector
-1. In Cloudflare, select **Zero Trust → Networks → Tunnels**.  
-2. Click **Create a Tunnel** → select the **Cloudflared** option.
+## Step 3: Tunnel Connector Setup
+1. In the Cloudflare dashboard, navigate to **Zero Trust → Networks → Tunnels**
+2. Click **Create a Tunnel** → selecting the **Cloudflared** option.
 3. Choose a name for your tunnel (example: linode-lax-dev01). 
-  - Solid naming convention if you utilize multiple hosting providers, regions, and servers.
-4. Select your server’s operating system.  
-5. Execute the two commands provided via shell (top, bottom-left boxes):  
+> provider-location=server is a solid naming convention if you utilize multiple hosting providers, regions, and servers.
+4. Select the target hosts operating system.
+5. (Unix-based servers): Run the commands provided. (top, bottom-left boxes):  
 
    - **1. (top)**: installs Cloudflare tunnel connector.  
-   - **2. (bottom-left)**: enables the tunnel upon boot.  
+   - **2. (bottom-left)**: enables tunnel service at boot
 
 ---
 
-## Step 4: Web Application Configuration
-1. In the tunnel settings under the tab **Published Application Routes**, select **Add a published application route**.
-2. Input the following fields:
+## Step 4: Published Application Route Setup
+
+1. In tunnel settings, select **Published Application Routes**, then **Add a published application route**.
+2. Input prompted fields:
    - **Subdomain**: *(leave blank — this will be your root domain)*  
    - **Domain**: select your domain  
    - **Service**: HTTP  
-   - **URL**: `localhost:your_selected_port` (example: localhost:8080)  
+   - **URL**: `localhost:your_applications_port` (example: localhost:8080)  
 2. Click **Save Tunnel**.  
-3. Now we configure our **www** sub-domain:  
+3. Configure additional desired routes such as the **www** sub-domain:  
    - **Subdomain**: `www`  
    - **Domain**: select your domain
    - **Service**: HTTP  
    - **URL**: `localhost:8080`  
 4. Save.  
 
-Congratulations, try out your newly configured application complete with SSL encryption.a    
+Congratulations, try out your newly configured SSL encrypted application.
+
 - `https://yourdomain.com`  
 - `https://www.yourdomain.com`  
 
-Cloudflare makes hosting webapps a breeze and eliminates the dependency of a reverse-proxy service such as nginx. No more wasted time updating nginx configs and generating SSL certificates. Your application is SSL encrypted automatically.
+Cloudflare makes hosting a breeze and eliminates the dependency of a reverse-proxy service such as nginx. No more wasted time updating upsteam application configs and generating SSL certificates.
 
 
 ---
 
-## Step 5: Add More Applications (Optional)
-Want multiple apps on the same server? Repeat step four adding additional published application routes. Routes can even be configured to other domains that you manage on Cloudflare.  
+## Step 5: Need to configure more applications? (Optional)
+
+Simply repeat step four, routes can even be configured to other domains that you manage with Cloudflare.  
 
 - `api.yourdomain.com → localhost:3000`  
 - `blog.yourdomain.com → localhost:5000`  
 
 ---
 
-## Step 6: Development Access (Optional)
+## Step 6: Optional Development Access
 
-In the early stages of development you will obviously want to preview your work. To accomplish this we will use SSH port-forwarding to expose our remotely hosted application to our development machine. 
+One method to preview your web applications is via ssh port-forwarding. To accomplish this we will expose our application's local address to our workstation. By doing this we can access the remote application using **http://localhost:remote_app_port**. 
 
 ```bash
 ssh -R 8080:localhost:8080 username@yourserver.tld
 ```
 
-Once the connection has been established, simply open your browser to http://localhost:8080
-
 ## Benefits of This Setup
 
 - Eliminates the need for a reverse proxy service.
 - Eliminates the need for paid SSL certificates and LetsEncrypt — Cloudflare provides certificates automatically
-- Reduced server exposure — DNS records are proxied through Cloudflare masking your real IPv4/IPv6 address, allows you to host applications without exposing common server ports such as 80, 443.
+- Reduced server exposure — DNS records are proxied through Cloudflare masking your real IPv4/IPv6 address, allows you to host applications without public-facing port exposure.
 - Easy scaling — easily add new domains and applications, just add the domain into Cloudflare DNS and create public hostnames within the tunnel settings.
 
 Got questions? I'm happy to address any inquiries you might have on LinkedIn.
