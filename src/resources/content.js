@@ -52,7 +52,7 @@ const home = {
   headline: <>Joshua Marcum</>,
   featured: {
     display: true,
-    title: <><strong className="ml-4">Schedule a call</strong></>,
+    title: <><strong className="ml-4">Schedule a call</strong> / (602) 661-1115</>,
     href: "https://cal.com/securityengineerd",
   },
   subline: (
@@ -82,7 +82,7 @@ const about = {
     title: "Summary",
     description: (
       <>
-	 Security Operations Engineer ready to address your most complex operational challenges. Proven expertise in coordinating large-scale modernization projects, cloud & data migrations, detection capability enhancement, and vulnerability management. With a strong commitment to excellence and collaborative nature, your teams will gain a reputation for their proactive nature while producing high-quality deliverables. 
+	 Security Operations Engineer ready to address your most complex operational challenges. Proven expertise in coordinating large-scale modernization projects, cloud & data migrations, detection capability enhancement, and vulnerability management. With a strong commitment to excellence, collaboration, and punctuality. Through our team's work we will produce high-quality deliverables and establish a reputation for being efficent and proactive. 
       </>
     ),
   },
