@@ -1,23 +1,25 @@
 ---
-title: "Secure Hosting Guide (Step-by-Step)"
-summary: "Learn my preferred method of securely hosting web applications, it is how this security engineer hosts their websites."
+title: "Secure Web Application Hosting with -ZERO- Port Exposure (Step-by-Step)"
+summary: "Secure Web Application Hosting Guide - My years of experience in cyber-defense and enterprise application support has defined my standard for running web applications."
 publishedAt: "2025-09-17"
 tag: "Cloudflare"
----
+--
 
 # Overview 
 
-This guide shows you how to securely host web application with ZERO port-exposure, thanks to **Cloudflare** for their **Tunnel Connector**. Using this configuration requires minimal up-keep without the need for a reverse-proxy service, buying a SSL certificate, or worse yet Lets Encrypt. Cloudflare also lets you proxy DNS requests as well, eliminating direct exposure of your server's IP addresses. With over 20+ years experience in web hosting and 12+ yrs in hosting high-availability enterprise applications, it is how this Security Engineer hosts webapps. :)  
+Today you will learn how to securely host web applications. The following configuration features **minimal configuration**, absolutely **ZERO port-exposure**, **proxied DNS records**, and **free SSL encryption**. Benefits made possible to the Zero-Trust offerings of **Cloudflare** and their **tunnel connector**. 
 
+With nearly 20 years of hosting experience, it's the best method I've found to date. We will only be covering a small portion of Cloudflare's services today, specifically their **Tunnel Connector**. Yet there are other awesome features which I will post about soon. Stay tuned...
 
 ---
 
-## Prerequisites
-- Domain Name
-- Cloudflare User Account (free account)  
-- Existing web application (bound to `localhost:port`, example `http://127.0.0.1:8080`)
-> Warning: Make absolutely sure that the instance is NOT configured to use "0.0.0.0" as the listening address! Using '0.0.0.0' causes the instance to accept connections from any address, including your host's internet-facing addresses. Definitely NOT what we want. Our configuration will have ZERO public port-exposure, the only acceptable listening address is "127.0.0.1".
-- Server shell access. (For tunnel connector install, optional port-forwarding to local workstation to access remote application)  
+## Setup Requirements
+
+- Registered Domain Name
+- Cloudflare Account (free account)  
+- Web Application (bound to `localhost:port`, example `http://127.0.0.1:8080`)
+> Warning: Make absolutely sure the instance is NOT configured using "0.0.0.0" as the listening address! It allows the instance to accept connections from ANY address across all interfaces, including internet-facing addresses. Our hosted application will have ZERO public port-exposure, the only acceptable listening address is "127.0.0.1".
+- Server ssh access (tunnel connector install, optional port-forwarding to local workstation to access remote application)  
 
 ---
 

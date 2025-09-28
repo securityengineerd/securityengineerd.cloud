@@ -12,42 +12,42 @@ import {
   Meta,
   Schema
 } from "@once-ui-system/core";
-import { baseURL, about, person, social } from "@/resources";
-import TableOfContents from "@/components/about/TableOfContents";
-import styles from "@/components/about/about.module.scss";
+import { baseURL, resume, person, social } from "@/resources";
+import TableOfContents from "@/components/resume/TableOfContents";
+import styles from "@/components/resume/resume.module.scss";
 import React from "react";
 
 export async function generateMetadata() {
   return Meta.generate({
-    title: about.title,
-    description: about.description,
+    title: resume.title,
+    description: resume.description,
     baseURL: baseURL,
-    image: `/api/og/generate?title=${encodeURIComponent(about.title)}`,
-    path: about.path,
+    image: `/api/og/generate?title=${encodeURIComponent(resume.title)}`,
+    path: resume.path,
   });
 }
 
 export default function About() {
   const structure = [
     {
-      title: about.intro.title,
-      display: about.intro.display,
+      title: resume.intro.title,
+      display: resume.intro.display,
       items: [],
     },
     {
-      title: about.work.title,
-      display: about.work.display,
-      items: about.work.experiences.map((experience) => experience.company),
+      title: resume.work.title,
+      display: resume.work.display,
+      items: resume.work.experiences.map((experience) => experience.company),
     },
     {
-      title: about.studies.title,
-      display: about.studies.display,
-      items: about.studies.institutions.map((institution) => institution.name),
+      title: resume.studies.title,
+      display: resume.studies.display,
+      items: resume.studies.institutions.map((institution) => institution.name),
     },
     {
-      title: about.technical.title,
-      display: about.technical.display,
-      items: about.technical.skills.map((skill) => skill.title),
+      title: resume.technical.title,
+      display: resume.technical.display,
+      items: resume.technical.skills.map((skill) => skill.title),
     },
   ];
   return (
@@ -55,17 +55,17 @@ export default function About() {
       <Schema
         as="webPage"
         baseURL={baseURL}
-        title={about.title}
-        description={about.description}
-        path={about.path}
-        image={`/api/og/generate?title=${encodeURIComponent(about.title)}`}
+        title={resume.title}
+        description={resume.description}
+        path={resume.path}
+        image={`/api/og/generate?title=${encodeURIComponent(resume.title)}`}
         author={{
           name: person.name,
-          url: `${baseURL}${about.path}`,
+          url: `${baseURL}${resume.path}`,
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      {about.tableOfContent.display && (
+      {resume.tableOfContent.display && (
         <Column
           left="0"
           style={{ top: "50%", transform: "translateY(-50%)" }}
@@ -74,11 +74,11 @@ export default function About() {
           gap="32"
           hide="s"
         >
-          <TableOfContents structure={structure} about={about} />
+          <TableOfContents structure={structure} resume={resume} />
         </Column>
       )}
       <Flex fillWidth mobileDirection="column" horizontal="center">
-        {about.avatar.display && (
+        {resume.avatar.display && (
           <Column
             className={styles.avatar}
             position="sticky"
@@ -107,13 +107,13 @@ export default function About() {
         )}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
           <Column
-            id={about.intro.title}
+            id={resume.intro.title}
             fillWidth
             minHeight="160"
             vertical="center"
             marginBottom="32"
           >
-            {about.calendar.display && (
+            {resume.calendar.display && (
               <Flex
                 fitWidth
                 border="brand-alpha-medium"
@@ -131,7 +131,7 @@ export default function About() {
                 <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
                 <Flex paddingX="8">Schedule a call</Flex>
                 <IconButton
-                  href={about.calendar.link}
+                  href={resume.calendar.link}
                   data-border="rounded"
                   variant="secondary"
                   icon="chevronRight"
@@ -179,19 +179,19 @@ export default function About() {
             )}
           </Column>
 
-          {about.intro.display && (
+          {resume.intro.display && (
             <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
-              {about.intro.description}
+              {resume.intro.description}
             </Column>
           )}
 
-          {about.work.display && (
+          {resume.work.display && (
             <>
-              <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
-                {about.work.title}
+              <Heading as="h2" id={resume.work.title} variant="display-strong-s" marginBottom="m">
+                {resume.work.title}
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
-                {about.work.experiences.map((experience, index) => (
+                {resume.work.experiences.map((experience, index) => (
                   <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
                     <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
                       <Text id={experience.company} variant="heading-strong-l">
@@ -247,13 +247,13 @@ export default function About() {
             </>
           )}
 
-          {about.studies.display && (
+          {resume.studies.display && (
             <>
-              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
-                {about.studies.title}
+              <Heading as="h2" id={resume.studies.title} variant="display-strong-s" marginBottom="m">
+                {resume.studies.title}
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
-                {about.studies.institutions.map((institution, index) => (
+                {resume.studies.institutions.map((institution, index) => (
                   <Column key={`${institution.name}-${index}`} fillWidth gap="4">
                     <Text id={institution.name} variant="heading-strong-l">
                       {institution.name}
@@ -267,18 +267,18 @@ export default function About() {
             </>
           )}
 
-          {about.technical.display && (
+          {resume.technical.display && (
             <>
               <Heading
                 as="h2"
-                id={about.technical.title}
+                id={resume.technical.title}
                 variant="display-strong-s"
                 marginBottom="40"
               >
-                {about.technical.title}
+                {resume.technical.title}
               </Heading>
               <Column fillWidth gap="l">
-                {about.technical.skills.map((skill, index) => (
+                {resume.technical.skills.map((skill, index) => (
                   <Column key={`${skill}-${index}`} fillWidth gap="4">
                     <Text id={skill.title} variant="heading-strong-l">{skill.title}</Text>
                     <Text variant="body-default-m" onBackground="neutral-weak">

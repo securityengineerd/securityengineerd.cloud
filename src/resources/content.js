@@ -52,7 +52,7 @@ const home = {
   headline: <>Joshua Marcum</>,
   featured: {
     display: true,
-    title: <><strong className="ml-4">Schedule a call</strong> / (602) 661-1115</>,
+    title: <><strong className="ml-4">Schedule a call</strong> or (602) 661-1115</>,
     href: "https://cal.com/securityengineerd",
   },
   subline: (
@@ -61,8 +61,8 @@ I’ve always been passionate about computers and internet technologies. My back
     </>
   ),
 };
-const about = {
-  path: "/about",
+const resume = {
+  path: "/resume",
   label: "View Resume",
   title: `View Resume`,
   description: `Meet ${person.name}, ${person.role} from ${person.location}`,
@@ -497,4 +497,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, resume, blog, work, gallery };

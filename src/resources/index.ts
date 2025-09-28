@@ -4,7 +4,7 @@ export {
   social,
   newsletter,
   home,
-  about,
+  resume,
   blog,
   work,
   gallery,

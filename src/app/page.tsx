@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta, Schema } from "@once-ui-system/core";
-import { home, about, person, newsletter, baseURL, routes } from "@/resources";
+import { home, resume, person, newsletter, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
@@ -18,7 +18,7 @@ export default function Home() {
         image={`/api/og/generate?title=${encodeURIComponent(home.title)}`}
         author={{
           name: person.name,
-          url: `${baseURL}${about.path}`,
+          url: `${baseURL}${resume.path}`,
           image: `${baseURL}${person.avatar}`,
         }}
       />
@@ -44,16 +44,16 @@ export default function Home() {
           </RevealFx>
           <RevealFx paddingTop="12" delay={0.4} horizontal="start" paddingLeft="12">
             <Button
-              id="about"
+              id="resume"
               data-border="rounded"
-              href={about.path}
+              href={resume.path}
               variant="secondary"
               size="m"
               weight="default"
               arrowIcon
             >
               <Flex gap="8" vertical="center" paddingRight="4">
-                {about.avatar.display && (
+                {resume.avatar.display && (
                   <Avatar
                     marginRight="8"
                     style={{ marginLeft: "-0.75rem" }}
@@ -61,7 +61,7 @@ export default function Home() {
                     size="m"
                   />
                 )}
-                {about.title}
+                {resume.title}
               </Flex>
             </Button>
           </RevealFx>

@@ -5,7 +5,7 @@ const baseURL = "https://securityengineerd.com/";
 
 const routes = {
   "/": true,
-  "/about": true,
+  "/resume": true,
   "/work": true,
   "/blog": true,
   "/gallery": false,
