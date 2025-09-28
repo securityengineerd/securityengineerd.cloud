@@ -61,11 +61,11 @@ const fonts = {
 // default customization applied to the HTML in the main layout.tsx
 const style = {
   theme: "dark", // dark | light | system
-  neutral: "gray", // sand | gray | slate | custom
-  brand: "blue", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  accent: "blue", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  neutral: "slate", // sand | gray | slate | custom
+  brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  accent: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
   solid: "color", // color | contrast
-  solidStyle: "plastic", // flat | plastic
+  solidStyle: "flat", // flat | plastic
   border: "playful", // rounded | playful | conservative
   surface: "translucent", // filled | translucent
   transition: "all", // all | micro | macro
@@ -82,19 +82,19 @@ const dataStyle = {
   tick: {
     fill: "var(--neutral-on-background-weak)",
     fontSize: 11,
-    line: false
+    line: true 
   },
 };
 
 const effects = {
   mask: {
-    cursor: true,
+    cursor: false,
     x: 50,
     y: 0,
     radius: 100,
   },
   gradient: {
-    display: false,
+    display: true,
     opacity: 100,
     x: 50,
     y: 60,
@@ -105,7 +105,7 @@ const effects = {
     colorEnd: "page-background",
   },
   dots: {
-    display: false,
+    display: true,
     opacity: 100,
     size: "2",
     color: "brand-background-strong",
@@ -118,7 +118,7 @@ const effects = {
     height: "0.25rem",
   },
   lines: {
-    display: true,
+    display: false,
     opacity: 70,
     color: "neutral-alpha-weak",
     size: "64",
@@ -182,7 +182,7 @@ const schema = {
 
 // social links
 const sameAs = {
-  linkedin: "https://www.linkedin.com/in/insecurity/",
+  linkedin: "https://www.linkedin.com/in/securityengineerd/",
 };
 
 export { display, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle };

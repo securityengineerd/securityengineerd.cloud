@@ -57,16 +57,14 @@ const home = {
   },
   subline: (
     <>
-I’ve always been passionate about computers and internet technology. My background in cyber defense has helped secure several well-known organizations and their clients. I bring expertise in leading enterprise initiatives driving modernization, automation, and compliance. Whether it’s a cloud or data migration project, systems design, cost optimization, or vulnerability management, I look forward to tackeling your organization’s challenges. I’m open to work, click “Schedule a call.”
-
+I’ve always been passionate about computers and internet technologies. My background in cyber defense has helped secure several well-known organizations and their clients. I offer expert insight and experience in navigating complex operational challenges, driving modernization, automation, and security. I’m open to work, lets chat! Click “Schedule a call.”
     </>
   ),
 };
-
 const about = {
   path: "/about",
-  label: "Resume",
-  title: `Resume`,
+  label: "View Resume",
+  title: `View Resume`,
   description: `Meet ${person.name}, ${person.role} from ${person.location}`,
   tableOfContent: {
     display: true,
@@ -84,9 +82,7 @@ const about = {
     title: "Summary",
     description: (
       <>
-	 Veteran Security Operations Engineer with a proven track record in leading large-scale migration, implementation, and remedation projects. My expertise in operations and cyber defense enables me to bridge the gap between these domains and implement security-first enterprise-ready solutions. With collaborative communication and a strong sense of ownership, I thrive in dynamic environments that demand innovative thinking and sharp problem-solving skills.
-
-By leveraging my extensive experience, I work diligently to secure critical systems while delivering forward-looking solutions aligned with business goals. I am eager to embrace new challenges and contribute my expertise within a collaborative engineering environment.   
+	 Security Operations Engineer ready to address your most complex operational challenges. Proven expertise in coordinating large-scale modernization projects, cloud & data migrations, detection capability enhancement, and vulnerability management. With a strong commitment to excellence and collaborative nature, your teams will gain a reputation for their proactive nature while producing high-quality deliverables. 
       </>
     ),
   },
