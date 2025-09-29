@@ -52,12 +52,12 @@ const home = {
   headline: <>Joshua Marcum</>,
   featured: {
     display: true,
-    title: <><strong className="ml-4">Contact {person.name} / (602) 661-1115</strong></>,
+    title: <><strong className="ml-4">Call (602) 661-1115</strong></>,
     href: "https://cal.com/securityengineerd",
   },
   subline: (
     <>
-I’ve always been passionate about computers and internet technologies. My background in cyber defense has helped secure several well-known organizations and their clients. I offer expert insight and experience in navigating complex operational challenges, driving modernization, automation, and security. I’m open to work, lets chat! Click “Schedule a call.”
+I’ve always been passionate about computers and internet technologies. My background in cyber defense has helped secure several well-known organizations and their clients. I offer expert insight and experience in navigating complex operational challenges, driving modernization, automation, and security. I’m open to work, lets chat! 
     </>
   ),
 };
