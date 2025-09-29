@@ -19,7 +19,7 @@ sleep 3
 
 printf '%s\n' "Starting file synchronization."
 sleep 3
-rsync -vzP ./* root@ssh.artisangift.co:/home/nextjs/securityengineerd.cloud/ && \
+rsync -avzP ./* root@ssh.artisangift.co:/home/nextjs/securityengineerd.cloud/ && \
     writemsg " - success" || { writemsg " - Process aborted, failed to transfer portfolio."; exit 1; }
 
 ssh root@ssh.artisangift.co 'bash -s' < .build-root
