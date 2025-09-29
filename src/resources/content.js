@@ -48,11 +48,11 @@ const home = {
   image: "/images/og/home.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio, resume, and blog of ${person.role}`,
+  description: `Portfolio and blog of ${person.role}`,
   headline: <>Joshua Marcum</>,
   featured: {
     display: true,
-    title: <><strong className="ml-4">Schedule a call</strong> or (602) 661-1115</>,
+    title: <><strong className="ml-4">Contact {person.name} / (602) 661-1115</strong></>,
     href: "https://cal.com/securityengineerd",
   },
   subline: (

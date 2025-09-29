@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getPosts } from "@/utils/utils";
 import { Meta, Schema, AvatarGroup, Button, Column, Flex, Heading, Media, Text } from "@once-ui-system/core";
-import { baseURL, about, person, work } from "@/resources";
+import { baseURL, resume, person, work } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
 import { Metadata } from "next";
@@ -65,7 +65,7 @@ export default async function Project({
         image={post.metadata.image || `/api/og/generate?title=${encodeURIComponent(post.metadata.title)}`}
         author={{
           name: person.name,
-          url: `${baseURL}${about.path}`,
+          url: `${baseURL}${resume.path}`,
           image: `${baseURL}${person.avatar}`,
         }}
       />
