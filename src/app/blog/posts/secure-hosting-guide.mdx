@@ -7,10 +7,32 @@ tag: "Cloudflare"
 
 # Overview
 
-Today you will learn how to securely host web applications. The following configuration features **minimal configuration**, absolutely **ZERO port-exposure**, **proxied DNS records**, and **free SSL encryption**. Benefits made possible to the Zero-Trust offerings of **Cloudflare** and their **tunnel connector**. 
+Today you will learn how to securely host web applications. I started creating web applications when I was ten, having access to my own dedicated server since twelve. I'm having trouble processing this (or would rather not) however, I have 28 years experience in hosted applications. (holy shit, where did the time go?) I'm only covering one specific Cloudflare service today, their zero-trust **Tunnel Connector**. I'll cover some of their other services at a later date. 
 
+## Advantages
 
-With nearly 20 years of hosting experience, it's the best method I've found to date. We will only be covering a small portion of Cloudflare's services today, specifically their **Tunnel Connector**. Yet there are other awesome features which I will cover in the coming days. Stay tuned...
+1. Eliminates need for a reverse-proxy service.
+> and creating a config for each upstream application
+
+2. Free SSL Encryption
+> You will be free from generating LetsEncrypt certificates, paid certificates, and updating reverse-proxy configs!
+
+3 Masks your IPv4/IPv6 address with proxying of DNS records.
+> Check out this nmap port scan results snippet against securityengineerd.com... that is not my server's address ;)
+
+```
+Scanning securityengineerd.com (172.67.222.134) [1000 ports]
+Discovered open port 8080/tcp on 172.67.222.134
+Discovered open port 443/tcp on 172.67.222.134
+Discovered open port 8443/tcp on 172.67.222.134
+```
+
+4. ZERO public-port exposure
+> Even if someone had your actual IPv4/IPv6 address, there are no open ports!
+
+5. Easily Scales
+> Spun up a new docker app? Simply add a new published application route.
+
 
 ---
 
@@ -105,11 +127,11 @@ One method to preview your web applications is via ssh port-forwarding. To accom
 ssh -R 8080:localhost:8080 username@yourserver.tld
 ```
 
-## Benefits of This Setup
 
-- Eliminates the need for a reverse proxy service.
-- Eliminates the need for paid SSL certificates and LetsEncrypt — Cloudflare provides certificates automatically
-- Reduced server exposure — DNS records are proxied through Cloudflare masking your real IPv4/IPv6 address, allows you to host applications without public-facing port exposure.
-- Easy scaling — easily add new domains and applications, just add the domain into Cloudflare DNS and create public hostnames within the tunnel settings.
+
+
+
+
+
 
 Got questions? I'm happy to address any inquiries you might have on LinkedIn.
