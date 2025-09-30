@@ -11,14 +11,9 @@ Today you will learn how to securely host web applications. I started creating w
 
 ## Advantages
 
-1. Eliminates need for a reverse-proxy service.
-+ time spent managing configs for each upstream application
-
-2. Free SSL Encryption
-You will be free from generating LetsEncrypt certificates, paid certificates, and updating reverse-proxy configs!
-
-3. Masks your IPv4/IPv6 address with proxying of DNS records.
-Check out this nmap port scan results snippet against securityengineerd.com... that is not my server's address ;)
+- Eliminates need for a reverse-proxy service + time spent managing configs for each upstream application
+- Free SSL Encryption, you will be free from generating LetsEncrypt certificates, paid certificates, and updating reverse-proxy configs!
+- Masks your IPv4/IPv6 address with proxying of DNS records. Check out this nmap port scan results snippet against securityengineerd.com... that is not my server's address ;)
 
 ```
 Scanning securityengineerd.com (172.67.222.134) [1000 ports]
@@ -27,11 +22,8 @@ Discovered open port 443/tcp on 172.67.222.134
 Discovered open port 8443/tcp on 172.67.222.134
 ```
 
-4. ZERO public-port exposure
-> Even if someone had your actual IPv4/IPv6 address, there are no open ports!
-
-5. Easily Scales
-> Spun up a new docker app? Simply add a new published application route.
+- ZERO public-port exposure. Even if someone had your actual IPv4/IPv6 address, there are no open ports!
+- Easily Scales. Spun up a new docker app? Simply add a new published application route.
 
 
 ---
