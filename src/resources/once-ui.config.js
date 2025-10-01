@@ -6,6 +6,7 @@ const baseURL = "https://securityengineerd.com/";
 const routes = {
   "/": true,
   "/resume": true,
+  "/skills": true,
   "/work": true,
   "/blog": true,
   "/gallery": false,
@@ -88,7 +89,7 @@ const dataStyle = {
 
 const effects = {
   mask: {
-    cursor: true,
+    cursor: false,
     x: 50,
     y: 0,
     radius: 25,
@@ -118,7 +119,7 @@ const effects = {
     height: "0.25rem",
   },
   lines: {
-    display: false,
+    display: true,
     opacity: 70,
     color: "neutral-alpha-weak",
     size: "64",
@@ -131,7 +132,7 @@ const mailchimp = {
   action: "https://url/subscribe/post?parameters",
   effects: {
     mask: {
-      cursor: true,
+      cursor: false,
       x: 50,
       y: 0,
       radius: 100,
