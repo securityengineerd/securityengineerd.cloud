@@ -26,7 +26,7 @@ export default function Home() {
         <Column maxWidth="s">
           {home.featured.display && (
           <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" paddingLeft="12">
-            <Badge background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}
+            <Badge background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="label-default-l" arrow={false}
               href={home.featured.href}>
               <Row paddingY="2">{home.featured.title}</Row>
             </Badge>
@@ -48,7 +48,7 @@ export default function Home() {
               data-border="rounded"
               href={resume.path}
               variant="secondary"
-              size="m"
+              size="l"
               weight="default"
               arrowIcon
             >
@@ -73,8 +73,8 @@ export default function Home() {
       {routes["/blog"] && (
         <Flex fillWidth gap="24" mobileDirection="column">
           <Flex flex={1} paddingLeft="l" paddingTop="24">
-            <Heading as="h2" variant="display-strong-xs" wrap="balance">
-              Latest from the blog
+            <Heading as="h1" variant="display-strong-m" wrap="balance">
+             Latest Posts 
             </Heading>
           </Flex>
           <Flex flex={3} paddingX="20">
