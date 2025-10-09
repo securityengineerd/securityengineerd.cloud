@@ -15,31 +15,31 @@ What are the benefits of AI assisted IR? Will all these gains result in the pote
 
 > Investigation data is enriched though the AI's ability to continually triage and correlate SEIM, EDR, OSINT, and network traffic analysis. It's ability to produce an easy-to-understand summary will  allow investigators to focus on remediation rather than their tool navigation abilities.
 
-Benefit: Reduces false-positive triage times from hours to minutes.
+> Benefit: Reduces false-positive triage times from hours to minutes.
 
 2. Faster Containment
 
-Executing predefined containment playbooks (e.g., isolate hosts, disable user accounts, or revoke API keys) quickly puts a stop to detected threats. Especially useful when investigators are in short supply or high-volumes of events. 
+> Executing predefined containment playbooks (e.g., isolate hosts, disable user accounts, or revoke API keys) quickly puts a stop to detected threats. Especially useful when investigators are in short supply or high-volumes of events. 
 
-Benefit: Reduced MTTC
+> Benefit: Reduced MTTC
 
 3. Contextual Reasoning Across Tools
 
-Investigators waste time switching between tools (SIEM, SOAR, EDR, CMDB, OSINT, etc.). Agentic AI unifies reasoning by querying APIs to produce a single contextual narrative.
+> Investigator's time is usually wasted switching between this tool and that (SIEM, SOAR, EDR, CMDB, OSINT, etc.). Agentic AI unifies reasoning by querying APIs to produce a single contextual narrative.
 
- Benefit: Investigators get summarized explanations (“This credential reuse originated from the compromised bastion host”) rather than the investigator creating a summary from navigating multiple alerts. 
+> Benefit: Investigators get summarized explanations (“This credential reuse originated from the compromised bastion host”) rather than the investigator creating a summary from navigating multiple alerts. 
  
 4. Continuous Threat Hunting
 
-Utilizing AI as a threat-hunter allows organizations to leverage continuous 24/7 scanning for indicators of persistence, misconfigurations, and vulnerable software. 
+> Utilizing AI as a threat-hunter allows organizations to leverage continuous 24/7 scanning for indicators of persistence, misconfigurations, and vulnerable software. 
 
-Benefit: Sets a proactive SOC posture rather than reactive.
+> Benefit: Sets a proactive SOC posture rather than reactive.
 
 5. Integration of Tribal Knowledge
 
-AI Agents can learn from prior investigator decisions and leverage tribal knowledge (how do we usually handle this alert type?) into repeatable workflows.
+> AI Agents can learn from prior investigator decisions and leverage tribal knowledge (how do we usually handle this alert type?) into repeatable workflows.
 
-Benefit: Reduced dependency on individual expertise. 
+> Benefit: Reduced dependency on individual expertise. 
 
 # Agentic IR: The Pitfalls
 
@@ -47,36 +47,36 @@ We have already discussed the benefits of Artificial Intelligence aided investig
 
 1. Over-Automation and False Positives
 
-Unexpected results could occur if an agent was trained using bad training data. Outage events could occur if the agent  isolates critical production servers, disables service accounts, or blocks IP addresses of a CDN or business essential SAAS providers. 
+> Unexpected results could occur if an agent was trained using bad training data. Outage events could occur if the agent  isolates critical production servers, disables service accounts, or blocks IP addresses of a CDN or business essential SAAS providers. 
 
-Mitigation: Implement workflows involving human over-sight on potentially evasive actions
+> Mitigation: Implement workflows involving human over-sight on potentially evasive actions
 
 2. Opaque Decision-Making (“Black Box” Risk)
 
-Many AI systems can’t explain why they made a decision. In the world of enterprise security that is not acceptable, decisions need to be auditable for compliance and trust.
+> Many AI systems can’t explain why they made a decision. In the world of enterprise security that is not acceptable, decisions need to be auditable for compliance and trust.
 
-Mitigation: Favor LLMs which provide better reasoning capabilities, structured logs, and decision trees.
+> Mitigation: Favor LLMs which provide better reasoning capabilities, structured logs, and decision trees.
 
 3. Sensitive Data Leaks
 
-Feeding sensitive un-redacted log data or threat intel into an external AI model comes with several risks: interception, vendor compromise, or possible violations of compliance requirements 
+> Feeding sensitive un-redacted log data or threat intel into an external AI model comes with several risks: interception, vendor compromise, or possible violations of compliance requirements 
 
-Mitigation: Leverage on-prem AI deployments over SaaS.
+> Mitigation: Leverage on-prem AI deployments over SaaS.
 
 4. New Threat Adaptationx
 
-Attack methods evolve faster than static AI models. Without continuous training, AI agents could fail to detect emerging TTPs.
+> Attack methods evolve faster than static AI models. Without continuous training, AI agents could fail to detect emerging TTPs.
 
-Mitigation: Integrate new training data into the deployment pipeline which leverages live threat intel. Regularly conduct simulated attacks to ensure agent response is to desired specifications. 
+> Mitigation: Integrate new training data into the deployment pipeline which leverages live threat intel. Regularly conduct simulated attacks to ensure agent response is to desired specifications. 
 
 5. Skill Degradation
 
-Over-reliance on AI could cause SOC members to unconditionally accept the AI's determination. In situations that may warrant an exception due to select circumstances, AI determination could result in disciplinary action or loss of employment.
+> Over-reliance on AI could cause SOC members to unconditionally accept the AI's determination. In situations that may warrant an exception due to select circumstances, AI determination could result in disciplinary action or loss of employment.
 
-Mitigation: Don't let AI make the final determination, investigators need to make the final judgement call. 
+> Mitigation: Don't let AI make the final determination, investigators need to make the final judgement call. 
 
 6. AI Manipulation
 
-Like humans, AI are also subject to manipulation. Prompt-injection and data poisoning can lead to unexpected behaviors and outcomes. 
+> Like humans, AI are also subject to manipulation. Prompt-injection and data poisoning can lead to unexpected behaviors and outcomes. 
 
-Mitigation: Harden ingestion pipelines, input sanitization, and continuous monitoring for adversarial manipulation.
+> Mitigation: Harden ingestion pipelines, input sanitization, and continuous monitoring for adversarial manipulation.
