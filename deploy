@@ -17,7 +17,7 @@ git add . && git commit -m "automated portfolio push of current sources." && git
 writemsg "Updating remote hosts portfolio sources..."
 sleep 3 
 
-git ls-file > ./.transfer.tmp
+git ls-files > ./.transfer.tmp
 printf '%s\n' "Starting file synchronization."
 sleep 3
 rsync -avzP --exclude './.next' --files-from='./.transfer.tmp' root@ssh.artisangift.co:/home/nextjs/securityengineerd.cloud/ && \
