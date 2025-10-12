@@ -47,9 +47,9 @@ const home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Cyber-defense services provided by ${person.role}`,
-  headline: <>Joshua Marcum</>,
+  title: `securityengineerd.com - Cyber-defense & hosted technology services by ${person.name}`,
+  description: `Cyber-defense and hosted technology services by ${person.role}`,
+  headline: <>securityengineerd.cosecurityengineerd.comm</>,
   featured: {
     display: true,
     title: <><strong className="ml-4">Call (602) 661-1115</strong></>,
