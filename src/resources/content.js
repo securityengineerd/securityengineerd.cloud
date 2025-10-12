@@ -34,7 +34,7 @@ const social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/insecurity",
+    link: "https://www.linkedin.com/in/securityengineerd",
   },
   {
     name: "Email",
@@ -48,7 +48,7 @@ const home = {
   image: "/images/og/home.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio and blog of ${person.role}`,
+  description: `Cyber-defense services provided by ${person.role}`,
   headline: <>Joshua Marcum</>,
   featured: {
     display: true,
@@ -57,7 +57,7 @@ const home = {
   },
   subline: (
     <>
-I’ve always been passionate about computers and internet technologies. My background in cyber defense has helped secure several well-known organizations and their clients. I offer expert insight and experience in navigating complex operational challenges, driving modernization, automation, and security. I’m open to work, lets chat! 
+Our passion is web-technology and it's security. With a proven background in enterprise cyber-defense, our expertise and experience has contributed to the safety of several well-known organizations and their clients. Get expert insight in navigating complex operational challenges to drive modernization, automation, security, and efficiency leveraging artificial-intelligence. A quick and easy initial consultation costs nothing, let us put together a solution custom-tailored to your business needs. Call us today! 
     </>
   ),
 };
@@ -329,38 +329,7 @@ const resume = {
     display: true, // set to false to hide this section
     title: "Technical skills",
     skills: [
-    {
-        title: "All Skills",
-        description: <>Skills and professional experience, also available under Blog - Skills & Experience.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/skills/other1.jpg",
-            alt: "Part 1",
-            width: 16,
-            height: 20,
-          },
-          {
-            src: "/images/skills/other2.jpg",
-            alt: "Part 2",
-            width: 16,
-            height: 20,
-          },
-          {
-            src: "/images/skills/other3.jpg",
-            alt: "Part 3",
-            width: 16,
-            height: 20,
-          },
-          {
-            src: "/images/skills/other4.jpg",
-            alt: "Part 4",
-            width: 16,
-            height: 20,
-          },
-        ],
-      },
-	{
+      {
         title: "Cortex XSOAR",
         description: <>4 Years Experience - Incident response and investigation.</>,
         // optional: leave the array empty if you don't want to display images
@@ -373,7 +342,6 @@ const resume = {
           },
         ],
       },
-
       {
         title: "CrowdStrike",
         description: <>4 Years Experience - Incident response and investigation.</>,
@@ -431,8 +399,8 @@ const resume = {
 const blog = {
   path: "/blog",
   label: "Blog",
-  title: "Blog Posts",
-  description: `Read new content by ${person.name} covering various engineering subject matter.`,
+  title: "Posts",
+  description: `Guides, tutorials, and rants by ${person.name} covering artificial-intelligence, cyber-defense, cloud, and other engineering subject matter.`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
@@ -441,7 +409,7 @@ const work = {
   path: "/work",
   label: "Projects",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  description: `Work showcase by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
@@ -581,6 +549,7 @@ const skillsData = {
         "ProofPoint",
         "Qualys",
         "RSA NetWitness",
+	"Splunk",
         "Symantec (Endpoint Protection Manager, SiteMinder)",
         "Tenable Nessus",
         "Tripwire",
@@ -588,6 +557,7 @@ const skillsData = {
         "Zscaler",
         "Cisco (AnyConnect, UCS)",
         "HAProxy",
+	"Traefik",
         "Nginx",
         "OpenSSH",
         "Active Directory",
@@ -609,13 +579,7 @@ const skillsData = {
         { name: "Microsoft", items: ["ATA/ATP", "Defender Suite", "Dynamics", "Exchange", "In-Tune", "IIS", "Office 365", "PowerBI", "PowerShell", "Teams"] },
         { name: "Atlassian", items: ["Confluence", "Jira"] },
         { name: "Adobe Creative Suite", items: ["Dreamweaver", "Experience Manager", "Illustrator", "InDesign", "Photoshop"] },
-        "ServiceNow",
-        "SalesForce",
-        "Grafana",
-        "Splunk",
-        "Elastic Stack",
-        "New Relic",
-      ],
+        { name: "Other Enterprise", items: ["ServiceNow","SalesForce","Grafana","Elastic Stack","New Relic","Site24x7"] },
     },
   ],
   operatingSystems: [
@@ -626,10 +590,10 @@ const skillsData = {
     { title: "Boot Loaders", skills: ["Grub", "Lilo", "Refind", "systemd-boot", "syslinux"] },
   ],
   fileSystems: [
-    { title: "File System Types", skills: ["APFS", "BTRFS", "EXT2/3/4", "FAT16/32", "F2FS", "HFS", "SquashFS", "UDF", "XFS", "ZFS"] },
-    { title: "Distributed File Systems", skills: ["Ceph", "CIFS/SMB", "GlusterFS", "HDFS", "IPFS", "iSCSI", "NFS"] },
-    { title: "Encryption", skills: ["dm-crypt", "LUKS", "ZFS Native Encryption"] },
-    { title: "Interfaces & Other", skills: ["FUSE", "SSHFS", "VFS", "Logical Volume Management (LVM)"] },
+    { title: "File Systems", skills: ["APFS", "BTRFS", "EXT2/3/4", "FAT16/32", "F2FS", "HFS", "SquashFS", "UDF", "XFS", "ZFS"] },
+    { title: "Distributed File Systems", skills: ["Ceph", "CIFS", "SMB", "GlusterFS", "HDFS", "IPFS", "iSCSI", "NFS"] },
+    { title: "Encryption", skills: ["dm-crypt", "LUKS", "ZFS - Native Encryption"] },
+    { title: "Other", skills: ["FUSE", "SSHFS", "VFS", "Logical Volume Management (LVM)"] },
   ],
 };
 

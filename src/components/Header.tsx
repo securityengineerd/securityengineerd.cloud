@@ -99,7 +99,7 @@ export const Header = () => {
                 <>
                   <ToggleButton
                     className="s-flex-hide"
-                    prefixIcon="lightning"
+                    prefixIcon="checklist"
                     href="/skills"
                     label={skills.label}
                     selected={pathname.startsWith("/skills")}
