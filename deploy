@@ -12,7 +12,7 @@ function writemsg {
 
 writemsg "Performing local build test prior to deployment..."
 sleep 3; npm run build && { writemsg "  - build successful, deploying..."; } || \
-	{ writemsg "  - local build failed, fix your code! I won't be responsible for the resulting outage... Deploy it yourself.\n Process aborted."; exit 1; } 
+	{ writemsg "  - local build failed, fix your app! I won't be responsible for the resulting outage... Deploy it yourself!"; writemsg "Process aborted."; exit 1; } 
 
 writemsg "Updating remote repository, pushing current source-code..."
 git add . && git commit -m "automated portfolio push of current sources." && git push && \
