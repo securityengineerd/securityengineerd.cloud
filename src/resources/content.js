@@ -580,8 +580,11 @@ const skillsData = {
         { name: "Atlassian", items: ["Confluence", "Jira"] },
         { name: "Adobe Creative Suite", items: ["Dreamweaver", "Experience Manager", "Illustrator", "InDesign", "Photoshop"] },
         { name: "Other Enterprise", items: ["ServiceNow","SalesForce","Grafana","Elastic Stack","New Relic","Site24x7"] },
+	],
     },
   ],
+
+
   operatingSystems: [
     { title: "Linux", skills: ["Arch-based (BlackArch)", "Debian-based (Kali, Parrot)", "Gentoo-based (Pentoo)", "RHEL-based", "LFS", "NixOS", "Slackware", "Tails"] },
     { title: "Windows", skills: ["Windows 3.1 - 11", "Windows NT 4.0 - Server 2025"] },
