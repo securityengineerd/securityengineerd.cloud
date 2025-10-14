@@ -45,7 +45,7 @@ const social = [
 
 const home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "",
   label: "Home",
   title: `securityengineerd.com - Cyber-defense & hosted technology services by ${person.name}`,
   description: `Cyber-defense and hosted technology services by ${person.role}`,
