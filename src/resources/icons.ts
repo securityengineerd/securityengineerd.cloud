@@ -25,6 +25,7 @@ import {
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads } from "react-icons/fa6";
 
 import { MdChecklist } from "react-icons/md";
+import { BsLightning } from "react-icons/bs";
 
 
 export const iconLibrary: Record<string, IconType> = {
@@ -49,7 +50,8 @@ export const iconLibrary: Record<string, IconType> = {
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
   document: HiOutlineDocument,
   rocket: HiOutlineRocketLaunch,
-  checklist: MdChecklist
+  checklist: MdChecklist,
+  lightning: BsLightning,
 };
 
 export type IconLibrary = typeof iconLibrary;
