@@ -25,7 +25,7 @@ printf '%s\n' "Fetching latest repository data."
 sleep 3
 # rsync -avzP --exclude=./next --exclude=./node_modules ./* ./.* root@ssh.artisangift.co:/home/nextjs/securityengineerd.cloud/ && \
 #   writemsg " - success" || { writemsg " - Process aborted, failed to transfer portfolio."; exit 1; }
-ssh nextjs@ssh.artisangift.co 'bash -s cd ${REMOTE_PATH}; git fetch' && \
+ssh nextjs@ssh.artisangift.co 'bash -s $HOME/autobuild.sh' && \
 	writemsg " - Successfully retrieved updated repository data..." || { writemsg " -!- Unable to retrieve repository data. Process aborted."; exit 1; }
 ssh root@ssh.artisangift.co 'bash -s systemctl stop onceui-prod.service'
 ssh nextjs@ssh.artisangift.co "bash -s cd securityengineerd.cloud && npm run build" && \
