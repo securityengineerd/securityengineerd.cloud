@@ -1,9 +1,0 @@
-#!/usr/bin/env
-
-echo -e "Building Production Portfolio..."
-
-cd securityengineerd.cloud
-npm run build | tee -a $HOME/build.log && \
-    echo "  - success" || echo "  - failed production build. Process aborted." && exit 1
-
-

@@ -18,19 +18,17 @@ writemsg "Updating remote repository, pushing current source-code..."
 git add . && git commit -m "automated portfolio push of current sources." && git push && \
 	writemsg "  - success" || writemsg "  - failed to push changes to repository"
 
-writemsg "Updating remote hosts portfolio sources..."
+writemsg "Updating server portfolio sources..."
 sleep 3 
 
-git ls-files > ./transfer.tmp
-printf '%s\n' "Starting file synchronization."
+printf '%s\n' "Fetching latest repository data."
 sleep 3
-rsync -avzP --exclude=./next --exclude=./node_modules ./* ./.* root@ssh.artisangift.co:/home/nextjs/securityengineerd.cloud/ && \
-    writemsg " - success" || { writemsg " - Process aborted, failed to transfer portfolio."; exit 1; }
-#ssh nextjs@ssh.artisangift.co 'bash -s $( cd securityengineerd.cloud; git pull 
-ssh root@ssh.artisangift.co 'bash -s' < .build-root
-ssh nextjs@ssh.artisangift.co 'bash -s' < .build-nextjs
-
-writemsg "Starting Portfolio Service..."
+# rsync -avzP --exclude=./next --exclude=./node_modules ./* ./.* root@ssh.artisangift.co:/home/nextjs/securityengineerd.cloud/ && \
+#   writemsg " - success" || { writemsg " - Process aborted, failed to transfer portfolio."; exit 1; }
+ssh nextjs@ssh.artisangift.co 'bash -s cd securityengineerd.cloud && git fetch'
+ssh root@ssh.artisangift.co 'bash -s systemctl stop onceui-prod.service'
+ssh nextjs@ssh.artisangift.co "bash -s cd securityengineerd.cloud && npm run build" && \
+	writemsg " - Portfolio build successful, starting service..." || { writemsg " -!- Portfolio build failed. Exiting!"; exit 1; }
 sleep 3 && ssh root@ssh.artisangift.co 'systemctl start onceui-prod.service' &&
     writemsg " - success" || { writemsg " - Process aborted, failed to start portfolio service"; exit 1; }
 
