@@ -10,25 +10,29 @@ function writemsg {
   printf '%s\n' "${INPUT_MESG}"
 }
 
+function load_path {
+  load_path $1 && writemsg "Loaded Path: $1" || \
+    { writemsg "Not Found: $1"; exit 1; }
+}
+
 writemsg "Performing local build test prior to deployment..."
-sleep 3; npm run build && { writemsg "  - build successful, deploying..."; } || \
-	{ writemsg "  - local build failed, fix your app! I won't be responsible for the resulting outage... Deploy it yourself!"; writemsg "Process aborted."; exit 1; } 
+sleep 3; npm run build && { writemsg "  build-test> [SUCCESS]"; } || \
+	{ writemsg "  build-test> [FAILED]"; writemsg "  - Scripted deployment aborted to prevent outage..."; exit 1; } 
 
-writemsg "Updating remote repository, pushing current source-code..."
-git add . && git commit -m "automated portfolio push of current sources." && git push && \
-	writemsg "  - success" || writemsg "  - failed to push changes to repository"
+writemsg "Pushing local changes to repository..."
+git add . && git commit -m "$( date +%x' '%r ): script automated push" && \
+	git push && writemsg "  - complete" || writemsg "  - nothing to push"
 
-writemsg "Updating server portfolio sources..."
+writemsg "Updating portfolio from repository..."
 sleep 3 
 
-printf '%s\n' "Fetching latest repository data."
-sleep 3
-# rsync -avzP --exclude=./next --exclude=./node_modules ./* ./.* root@ssh.artisangift.co:/home/nextjs/securityengineerd.cloud/ && \
-#   writemsg " - success" || { writemsg " - Process aborted, failed to transfer portfolio."; exit 1; }
-ssh nextjs@ssh.artisangift.co 'cd $HOME/securityengineerd.cloud && git fetch' && \
-	writemsg " - Successfully retrieved updated repository data..." || { writemsg " -!- Unable to retrieve repository data. Process aborted."; exit 1; }
+printf '%s\n' "Pulling updated repository data..."
+ssh nextjs@ssh.artisangift.co 'load_path $REMOTE_PATH; git pull' && \
+	writemsg " - Successfully retrieved updated repository data..." || \
+	{ writemsg " -!- Unable to retrieve repository data."; exit 1; }
+
 ssh root@ssh.artisangift.co 'systemctl stop onceui-prod.service'
-ssh nextjs@ssh.artisangift.co 'cd $HOME/securityengineerd.cloud; npm run build' && \
+ssh nextjs@ssh.artisangift.co 'load_path $HOME/securityengineerd.cloud; npm run build' && \
 	writemsg " - Portfolio build successful, starting service..." || { writemsg " -!- Portfolio build failed. Exiting!"; exit 1; }
 sleep 3 && ssh root@ssh.artisangift.co 'systemctl start onceui-prod.service' &&
     writemsg " - success" || { writemsg " - Process aborted, failed to start portfolio service"; exit 1; }
