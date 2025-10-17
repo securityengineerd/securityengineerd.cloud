@@ -15,9 +15,17 @@ function cd {
     { writemsg "Not Found: $1"; exit 1; }
 }
 
-writemsg "Performing local build test prior to deployment..."
-sleep 3; npm run build && { writemsg "  build-test> [SUCCESS]"; } || \
+function build_local {
+  writemsg "Performing local build test prior to deployment..."
+  sleep 3; npm run build && { writemsg "  build-test> [SUCCESS]"; } || \
 	{ writemsg "  build-test> [FAILED]"; writemsg "  - Scripted deployment aborted to prevent outage..."; exit 1; } 
+}
+
+if [[ $LOCAL_BUILD -eq "1" ]]; then
+	build_local;
+else
+	writemsg "Local build skipped due to variable setting: LOCAL_BUILD=0"
+fi
 
 writemsg "Pushing local changes to repository..."
 git add . && git commit -m "$( date +%x' '%r ): script automated push" && \
