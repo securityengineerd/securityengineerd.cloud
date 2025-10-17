@@ -15,6 +15,15 @@ function cd {
     { writemsg "Not Found: $1"; exit 1; }
 }
 
+    diff=$(git diff --name-status)
+
+    if [ -z "$diff" ]; then
+        echo "No changes to commit."
+        return
+    fi
+
+    commit_message="Modified files:\n$diff"
+
 function build_local {
   writemsg "Performing local build test prior to deployment..."
   sleep 3; npm run build && { writemsg "  build-test> [SUCCESS]"; } || \
@@ -28,7 +37,7 @@ else
 fi
 
 writemsg "Pushing local changes to repository..."
-git add . && git commit -m "$( date +%x' '%r ): script automated push" && \
+git add . && git commit -m "$commit_message" && \
 	git push && writemsg "  - complete" || writemsg "  - nothing to push"
 
 writemsg "Updating portfolio from repository..."
