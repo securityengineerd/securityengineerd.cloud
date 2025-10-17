@@ -11,7 +11,7 @@ function writemsg {
 }
 
 function load_path {
-  load_path $1 && writemsg "Loaded Path: $1" || \
+  cd $1 && writemsg "Loaded Path: $1" || \
     { writemsg "Not Found: $1"; exit 1; }
 }
 
