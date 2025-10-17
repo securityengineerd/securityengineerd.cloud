@@ -10,7 +10,7 @@ function writemsg {
   printf '%s\n' "${INPUT_MESG}"
 }
 
-function load_path {
+function cd {
   cd $1 && writemsg "Loaded Path: $1" || \
     { writemsg "Not Found: $1"; exit 1; }
 }
@@ -27,12 +27,12 @@ writemsg "Updating portfolio from repository..."
 sleep 3 
 
 printf '%s\n' "Pulling updated repository data..."
-ssh nextjs@ssh.artisangift.co 'load_path $REMOTE_PATH; git pull' && \
+ssh nextjs@ssh.artisangift.co "cd $REMOTE_PATH && pwd; git pull" && \
 	writemsg " - Successfully retrieved updated repository data..." || \
 	{ writemsg " -!- Unable to retrieve repository data."; exit 1; }
 
 ssh root@ssh.artisangift.co 'systemctl stop onceui-prod.service'
-ssh nextjs@ssh.artisangift.co 'load_path $HOME/securityengineerd.cloud; npm run build' && \
+ssh nextjs@ssh.artisangift.co 'cd $HOME/securityengineerd.cloud && pwd; npm run build' && \
 	writemsg " - Portfolio build successful, starting service..." || { writemsg " -!- Portfolio build failed. Exiting!"; exit 1; }
 sleep 3 && ssh root@ssh.artisangift.co 'systemctl start onceui-prod.service' &&
     writemsg " - success" || { writemsg " - Process aborted, failed to start portfolio service"; exit 1; }
