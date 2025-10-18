@@ -45,7 +45,7 @@ ssh ${REMOTE_USER}@${REMOTE_HOST} "cd $REMOTE_PATH && pwd; git pull" && \
 	{ writemsg " [⨯] Unable to retrieve repository data."; exit 1; }
 
 writemsg "Stopping Portfolio Service..."
-ssh ${REMOTE_ADMIN}@${REMOTE_HOST} 'systemctl stop ${SERVICE_NAME}' && \
+ssh ${REMOTE_ADMIN}@${REMOTE_HOST} "systemctl stop ${SERVICE_NAME}" && \
     { writemsg " [✓] Successfully stopped portfolio service."; } || \
 	{ writemsg " [⨯] Failed to stop portfolio service. Deployment aborted."; exit 1; }
 
@@ -55,7 +55,7 @@ ssh ${REMOTE_USER}@${REMOTE_HOST} 'cd $HOME/securityengineerd.cloud; npm run bui
 	{ writemsg " [⨯] Portfolio build failed. Exiting!"; exit 1; }
 
 writemsg "Starting portfolio service..."; sleep 3;
-ssh ${REMOTE_ADMIN}@${REMOTE_HOST} 'systemctl start ${SERVICE_NAME}' && \
+ssh ${REMOTE_ADMIN}@${REMOTE_HOST} "systemctl start ${SERVICE_NAME}" && \
     writemsg " [✓] started successfully" || { writemsg " [⨯] failed to start portfolio service."; exit 1; }
 
 
