@@ -24,14 +24,16 @@ commit_message="Modified files:\n$diff"
 
 function build_local {
   writemsg "Performing local build test prior to deployment..."
-  sleep 3; npm run build && { writemsg "  build-test> [SUCCESS]"; } || \
-	{ writemsg "  build-test> [FAILED]"; writemsg "  - Scripted deployment aborted to prevent outage..."; exit 1; } 
+  sleep 3; npm run build && \
+    { writemsg " [✓] Local build successful, proceeding to deploy."; } || \
+	{ writemsg " [⨯] Local build failed. Deployment aborted to prevent outage."; exit 1; }
 }
 
 if [[ $LOCAL_BUILD -eq "1" ]]; then
 	build_local;
 else
-	writemsg "Local build skipped due to variable setting: LOCAL_BUILD=0"
+	writemsg "Local build skipped, found LOCAL_BUILD set to 0"
+	writemsg "Using this setting is not advised and may cause outages!"
 fi
 
 writemsg "Pushing local changes to repository..."
@@ -39,23 +41,19 @@ git add . && git commit -m "$commit_message" && git push && \
     { writemsg " [✓] Successfully pushed changes to repository."; } || \
 	{ writemsg " [⨯] Failed to push changes to repository. Deployment aborted."; exit 1; }
 
-writemsg "Updating portfolio server data..."; sleep 3 
-ssh ${REMOTE_USER}@${REMOTE_HOST} "cd $REMOTE_PATH && pwd; git pull" && \
+writemsg "Updating server's codebase..."; sleep 3 
+ssh ${REMOTE_USER}@${REMOTE_HOST} "cd ${REMOTE_PATH} && pwd; git pull" && \
     { writemsg " [✓] Successfully retrieved updated repository data..."; } || \
 	{ writemsg " [⨯] Unable to retrieve repository data."; exit 1; }
 
-writemsg "Stopping Portfolio Service..."
-ssh ${REMOTE_ADMIN}@${REMOTE_HOST} "systemctl stop ${SERVICE_NAME}" && \
-    { writemsg " [✓] Successfully stopped portfolio service."; } || \
-	{ writemsg " [⨯] Failed to stop portfolio service. Deployment aborted."; exit 1; }
-
-writemsg "Building updated portfolio..."; sleep 3;
-ssh ${REMOTE_USER}@${REMOTE_HOST} 'cd $HOME/securityengineerd.cloud; npm run build' && \
-    { writemsg " [✓] Portfolio build successful, starting service..."; } || \
+writemsg "Building updated codebase..."; sleep 3;
+ssh ${REMOTE_USER}@${REMOTE_HOST} "cd ${REMOTE_PATH}; npm run build" && \
+    { writemsg " [✓] Portfolio build successful."; } || \
 	{ writemsg " [⨯] Portfolio build failed. Exiting!"; exit 1; }
 
-writemsg "Starting portfolio service..."; sleep 3;
+writemsg "Restarting application service..."; sleep 3;
 ssh ${REMOTE_ADMIN}@${REMOTE_HOST} "systemctl start ${SERVICE_NAME}" && \
-    writemsg " [✓] started successfully" || { writemsg " [⨯] failed to start portfolio service."; exit 1; }
+    { writemsg " [✓] restarted service successfully"; } || \
+	{ writemsg " [⨯] failed to restart service."; exit 1; }
 
 
