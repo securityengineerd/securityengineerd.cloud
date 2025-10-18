@@ -14,19 +14,13 @@ function writemsg {
   printf '\n%s\n' "${GET_INPUT}"
 }
 
-function cd {
-  cd $1 && writemsg "Loaded Path: $1" || \
-    { writemsg "Not Found: $1"; exit 1; }
-}
+diff=$(git diff --name-status)
 
-    diff=$(git diff --name-status)
+if [ -z "$diff" ]; then
+    echo "No changes to commit."
+fi
 
-    if [ -z "$diff" ]; then
-        echo "No changes to commit."
-        return
-    fi
-
-    commit_message="Modified files:\n$diff"
+commit_message="Modified files:\n$diff"
 
 function build_local {
   writemsg "Performing local build test prior to deployment..."
