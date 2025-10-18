@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 
-LOCAL_PATH=$HOME/Projects/securityengineerd.cloud
-REMOTE_PATH=/home/nextjs/securityengineerd.cloud
-REMOTE_HOST=ssh.artisangift.co
-REMOTE_USER=root
+# Local deployment script by J.Marcum
+# SERVICE_NAME=		# Remote Listener Service Name
+# LOCAL_PATH=		# Path to local project.
+# REMOTE_PATH=		# Path to remote project.
+# REMOTE_HOST=		# SSH Host
+# REMOTE_USER=		# Service Account 
+# REMOTE_ADMIN=		# Admin User
+
 
 function writemsg {
-  local INPUT_MESG=$1
-  printf '%s\n' "${INPUT_MESG}"
+  local GET_INPUT=$1
+  printf '\n%s\n' "${GET_INPUT}"
 }
 
 function cd {
@@ -42,22 +46,22 @@ git add . && git commit -m "$commit_message" && git push && \
 	{ writemsg " [⨯] Failed to push changes to repository. Deployment aborted."; exit 1; }
 
 writemsg "Updating portfolio server data..."; sleep 3 
-ssh nextjs@ssh.artisangift.co "cd $REMOTE_PATH && pwd; git pull" && \
+ssh ${REMOTE_USER}@${REMOTE_HOST} "cd $REMOTE_PATH && pwd; git pull" && \
     { writemsg " [✓] Successfully retrieved updated repository data..."; } || \
 	{ writemsg " [⨯] Unable to retrieve repository data."; exit 1; }
 
 writemsg "Stopping Portfolio Service..."
-ssh root@ssh.artisangift.co 'systemctl stop onceui-prod.service' && \
+ssh ${REMOTE_ADMIN}@${REMOTE_HOST} 'systemctl stop ${SERVICE_NAME}' && \
     { writemsg " [✓] Successfully stopped portfolio service."; } || \
 	{ writemsg " [⨯] Failed to stop portfolio service. Deployment aborted."; exit 1; }
 
 writemsg "Building updated portfolio..."; sleep 3;
-ssh nextjs@ssh.artisangift.co 'cd $HOME/securityengineerd.cloud; npm run build' && \
+ssh ${REMOTE_USER}@${REMOTE_HOST} 'cd $HOME/securityengineerd.cloud; npm run build' && \
     { writemsg " [✓] Portfolio build successful, starting service..."; } || \
 	{ writemsg " [⨯] Portfolio build failed. Exiting!"; exit 1; }
 
 writemsg "Starting portfolio service..."; sleep 3;
-ssh root@ssh.artisangift.co 'systemctl start onceui-prod.service' && \
+ssh ${REMOTE_ADMIN}@${REMOTE_HOST} 'systemctl start ${SERVICE_NAME}' && \
     writemsg " [✓] started successfully" || { writemsg " [⨯] failed to start portfolio service."; exit 1; }
 
 
