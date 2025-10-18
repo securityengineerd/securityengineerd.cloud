@@ -82,7 +82,7 @@ const resume = {
     title: "Summary",
     description: (
       <>
-	 Security Operations Engineer ready to address your most complex operational challenges. Proven expertise in coordinating large-scale modernization projects, cloud & data migrations, detection capability enhancement, and vulnerability management. With a strong commitment to excellence, collaboration, and punctuality. Through our team's work we will produce high-quality deliverables and establish a reputation for being efficent and proactive. 
+	 Senior Security Engineer ready to address your most complex operational challenges. Proven expertise in coordinating large-scale modernization projects, cloud & data migrations, detection capability enhancement, and vulnerability management. With a strong commitment to excellence, collaboration, and punctuality. Through our team's work we will produce high-quality deliverables and establish a reputation for being efficent and proactive. 
       </>
     ),
   },
@@ -90,7 +90,31 @@ const resume = {
     display: true, // set to false to hide this section
     title: "Employment",
     experiences: [
-      {
+     {
+       company: "Isagenix",
+       timeframe: "10/2025 - Present",
+       role: "Senior Security Engineer",
+       achievements: [
+         <>
+	       Coming soon...
+         </>,
+       ],
+       images: [
+         {
+           src: "/images/employment/isagenix.jpg",
+           alt: "Isagenix",
+           width: 16,
+           height: 9,
+         },
+         {
+           src: "/images/employment/isagenix-building.jpg",
+           alt: "Isagenix",
+           width: 16,
+           height: 9,
+         },
+       ],
+     },
+     {
         company: "Blue Cross Blue Shield (Contract)",
         timeframe: "03/2024 - 04/2025",
         role: "Security Operations Engineer",
