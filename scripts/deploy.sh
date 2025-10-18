@@ -37,20 +37,27 @@ else
 fi
 
 writemsg "Pushing local changes to repository..."
-git add . && git commit -m "$commit_message" && \
-	git push && writemsg "  - complete" || writemsg "  - nothing to push"
+git add . && git commit -m "$commit_message" && git push && \
+    { writemsg " [✓] Successfully pushed changes to repository."; } || \
+	{ writemsg " [⨯] Failed to push changes to repository. Deployment aborted."; exit 1; }
 
-writemsg "Updating portfolio from repository..."
-sleep 3 
-
-printf '%s\n' "Pulling updated repository data..."
+writemsg "Updating portfolio server data..."; sleep 3 
 ssh nextjs@ssh.artisangift.co "cd $REMOTE_PATH && pwd; git pull" && \
-	writemsg " - Successfully retrieved updated repository data..." || \
-	{ writemsg " -!- Unable to retrieve repository data."; exit 1; }
+    { writemsg " [✓] Successfully retrieved updated repository data..."; } || \
+	{ writemsg " [⨯] Unable to retrieve repository data."; exit 1; }
 
-ssh root@ssh.artisangift.co 'systemctl stop onceui-prod.service'
-ssh nextjs@ssh.artisangift.co 'cd $HOME/securityengineerd.cloud && pwd; npm run build' && \
-	writemsg " - Portfolio build successful, starting service..." || { writemsg " -!- Portfolio build failed. Exiting!"; exit 1; }
-sleep 3 && ssh root@ssh.artisangift.co 'systemctl start onceui-prod.service' &&
-    writemsg " - success" || { writemsg " - Process aborted, failed to start portfolio service"; exit 1; }
+writemsg "Stopping Portfolio Service..."
+ssh root@ssh.artisangift.co 'systemctl stop onceui-prod.service' && \
+    { writemsg " [✓] Successfully stopped portfolio service."; } || \
+	{ writemsg " [⨯] Failed to stop portfolio service. Deployment aborted."; exit 1; }
+
+writemsg "Building updated portfolio..."; sleep 3;
+ssh nextjs@ssh.artisangift.co 'cd $HOME/securityengineerd.cloud; npm run build' && \
+    { writemsg " [✓] Portfolio build successful, starting service..."; } || \
+	{ writemsg " [⨯] Portfolio build failed. Exiting!"; exit 1; }
+
+writemsg "Starting portfolio service..."; sleep 3;
+ssh root@ssh.artisangift.co 'systemctl start onceui-prod.service' && \
+    writemsg " [✓] started successfully" || { writemsg " [⨯] failed to start portfolio service."; exit 1; }
+
 
