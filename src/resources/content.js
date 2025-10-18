@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Security Operations Engineer",
+  role: "Senior Security Engineer",
   avatar: "/images/avatar.jpg",
   email: "joshua.a.marcum@icloud.com",
   location: "America/Phoenix", // IANA TZ: 'Europe/Vienna'
@@ -96,7 +96,7 @@ const resume = {
        role: "Senior Security Engineer",
        achievements: [
          <>
-	       Coming soon...
+	       Achievements coming soon...
          </>,
        ],
        images: [
