@@ -1,17 +1,21 @@
-# **Magic Portfolio by Once UI**
+# securityengineerd.com
 
-View the [demo here](https://demo.magic-portfolio.com).
+Source code for securityengineerd.com, provider of web-technology and security services by Joshua Marcum. 
 
-![Magic Portfolio](https://demo.magic-portfolio.com/images/og/home.jpg)
+Website based upon (OnceUI)[https://www.onceui.com], please refer to their codebase if you are considering using my sources. 
 
 
-# **Getting started**
+## Demo 
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+Our current and live production site is located at the below URL. This repository produces what you see on our site. 
+
+> https://securityengineerd.com
+
+## How to Use this Repository
 
 **1. Clone the repository**
 ```
-git clone https://github.com/once-ui-system/magic-portfolio.git
+git clone https://github.com/securityengineerd/securityengineerd.cloud
 ```
 
 **2. Install dependencies**
@@ -19,29 +23,32 @@ git clone https://github.com/once-ui-system/magic-portfolio.git
 npm install
 ```
 
-**3. Run dev server**
+**3. Run development server**
 ```
 npm run dev
 ```
 
-**4. Edit config**
+**4. Modify Content **
 ```
-src/app/resources/config
-```
-
-**5. Edit content**
-```
-src/app/resources/content
+src/app/resources/content.js
 ```
 
-**6. Create blog posts / projects**
+**5. Creating Blog Posts**
 ```
-Add a new .mdx file to src/app/blog/posts or src/app/work/projects
+Add front-matter formatted MDX file to src/app/blog/posts 
+
+```
+
+**6. Adding Projects**
+```
+Reference existing documents under /src/app/projects
+
+Modify to suite your needs.
 ```
 
 # **Documentation**
 
-Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
+Refer to Once-UI documentation: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
 
 # **Features**
 
@@ -67,7 +74,7 @@ Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfo
 - A localized version of Magic Portfolio is available with the next-intl library
 - To use localization, switch to the 'i18n' branch
 
-# **Authors**
+# **Original Authors**
 
 Connect with us on Threads or LinkedIn.
 
@@ -76,10 +83,6 @@ Zsofia Komaromi: [Threads](https://www.threads.net/@zsofia_kom), [LinkedIn](http
 
 Localization added by [François Hernandez](https://github.com/francoishernandez)
 
-# **Get involved**
-
-- Join the [Design Engineers Club on Discord](https://discord.com/invite/5EyAQ4eNdS) and share your portfolio with us!
-- Report a [bug](https://github.com/once-ui-system/magic-portfolio/issues/new?labels=bug&template=bug_report.md).
 
 # **License**
 
