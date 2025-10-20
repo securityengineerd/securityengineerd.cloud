@@ -1,0 +1,13 @@
+[Unit]
+  Description=OnceUI Service - test
+  After=network.target
+[Service]
+  WorkingDirectory=/home/nextjs/securityengineerd.cloud
+  ExecStart=/usr/bin/npm start
+  Restart=always
+  User=nextjs
+  Group=nextjs
+  Environment=NODE_ENV=test
+
+[Install]
+  WantedBy=multi-user.target
