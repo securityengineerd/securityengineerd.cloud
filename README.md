@@ -1,13 +1,15 @@
 # securityengineerd.com
 
-Source code for securityengineerd.com, provider of web-technology and security services by Joshua Marcum. 
+Source code for securityengineerd.com website, business service provider of web-technology and security services by Joshua Marcum. 
 
-Website based upon (OnceUI)[https://www.onceui.com], please refer to their codebase if you are considering using my sources. 
+The securityengineerd website is based upon OnceUI, visit the link below: 
+> https://www.onceui.com 
 
+Please use their sources instead of this repository... Or don't, it's up to you. 
 
 ## Demo 
 
-Our current and live production site is located at the below URL. This repository produces what you see on our site. 
+Live production website is located at the below URL. What you see at that address is this repository. 
 
 > https://securityengineerd.com
 
