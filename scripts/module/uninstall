@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-ONCEUI_SERVICES=$( find /etc/systemd/system -type f -name 'onceui-*' )
-
-[[ -z ${ONCEUI_SERVICES} ]] && { echo "No OnceUI services to uninstall."; } || \
-	{ echo "Removing: $ONCEUI_SERVICES"; rm -rfv $( echo ${ONCEUI_SERVICES} ) && \
-	echo "  - Success"; }
-
