@@ -1,17 +1,17 @@
 ---
 title: "Template for an AI Acceptable Use Policy"
 summary: "For organizations looking to implement an acceptable use policy, feel free to modify this template to your needs."
-publishedAt: "2025-10-16"
-tag: "Work"
+publishedAt: "2025-10-25"
+tag: "AI"
 ---
 
 ## Template for an AI Acceptable Use Policy
 
-I recently put together an acceptable use policy for artificial intelligence use within an organization. If anyone might need a template for one, feel free to modify the policy below to your organization's specific needs. Don't forget to replace COMPANY_NAME with your actual company name.
+Artificial intelligence tools like ChatGPT, Gemeni, and GitHub Copilot are transforming how we work... They also raise new compliance, security, and ethical questions. Many organizations have yet to set clear boundaries for using AI, or provide training on how to use AI responsibly.
 
----
+## If your organization doesn't have an AI usage policy, consider using this as a baseline and expand as needs arise. Policies don’t need to be complex, they just need to reflect your values, protect intellectual property, and guide responsible use AI in the workplace
 
-## COMPANY_NAME AI ACCEPTABLE USE POLICY
+### Table of Contents
 
 I. Purpose
 II. Scope
@@ -20,9 +20,25 @@ IV. Policy Compliance
 V. Review & Revision
 VI. Change Log
 
+---
+
 ## I. PURPOSE
 
 The purpose of this policy is to define guidelines for the appropriate use of Artificial Intelligence (AI) tools within COMPANY_NAME. It aims to encourage the efficient and secure utilization of AI, while mitigating associated risks.
+
+## II. SCOPE
+
+This policy applies to all employees and covers the use of all AI tools authorized by COMPANY_NAME.
+
+## III. POLICY
+
+### 1. Authorized Use
+
+Only employees authorized by COMPANY_NAME who have received the necessary training are permitted to use AI tools. This authorization process is necessary to ensure that users understand the capabilities and limitations of these tools and how to use them in an effective and responsible manner. The only generative AI authorized by COMPANY_NAME is Microsoft Copilot and GitHub Copilot. Use of any other generative AI tooling is strictly prohibited.
+
+### 2. Data Security and Confidentiality
+
+Preservation of company data security, intellectual property, and confidentiality is paramount in all activities, including the use of AI tools. As these tools learn and generate content based on the input data, it is crucial that users do not input sensitive information, such as customer data, confidential contracts, details about partnerships, projects, work statements, or any other proprietary information.
 
 ## II. SCOPE
 
